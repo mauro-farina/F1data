@@ -1,6 +1,7 @@
 {
     "builds": [
       { "src": "*app/app.js", "use": "@vercel/node" }
-    ]
+    ],
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
   }
   
