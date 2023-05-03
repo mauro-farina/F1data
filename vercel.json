@@ -1,0 +1,6 @@
+{
+    "builds": [
+      { "src": "*app/app.js", "use": "@vercel/node" }
+    ]
+  }
+  
