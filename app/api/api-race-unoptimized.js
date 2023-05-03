@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const mongo = require("./mongodb.js");
+const mongo = require("../mongodb.js");
 
 // REST APIs
 /*
