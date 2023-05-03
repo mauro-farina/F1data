@@ -1,0 +1,959 @@
+year,round,finish_position,driver_id,constructor_id,finish_status
+2021,1,1,lewis_hamilton,mercedes,Finish
+2021,1,2,max_verstappen,red_bull,Finish
+2021,1,3,valtteri_bottas,mercedes,Finish
+2021,1,4,lando_norris,mclaren,Finish
+2021,1,5,sergio_perez,red_bull,Finish
+2021,1,6,charles_leclerc,ferrari,Finish
+2021,1,7,daniel_ricciardo,mclaren,Finish
+2021,1,8,carlos_sainz,ferrari,Finish
+2021,1,9,yuki_tsunoda,alphatauri,Finish
+2021,1,10,lance_stroll,aston_martin,Finish
+2021,1,11,kimi_raikkonen,alfa_romeo,Finish
+2021,1,12,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,1,13,esteban_ocon,alpine,1 LAP
+2021,1,14,george_russell,williams,1 LAP
+2021,1,15,sebastian_vettel,aston_martin,1 LAP
+2021,1,16,mick_schumacher,haas,1 LAP
+2021,1,17,pierre_gasly,alphatauri,DNF
+2021,1,18,nicholas_latifi,williams,DNF
+2021,1,N/C,fernando_alonso,alpine,DNF
+2021,1,N/C,nikita_mazepin,haas,DNF
+2021,2,1,max_verstappen,red_bull,Finish
+2021,2,2,lewis_hamilton,mercedes,Finish
+2021,2,3,lando_norris,mclaren,Finish
+2021,2,4,charles_leclerc,ferrari,Finish
+2021,2,5,carlos_sainz,ferrari,Finish
+2021,2,6,daniel_ricciardo,mclaren,Finish
+2021,2,7,pierre_gasly,alphatauri,Finish
+2021,2,8,lance_stroll,aston_martin,Finish
+2021,2,9,esteban_ocon,alpine,Finish
+2021,2,10,fernando_alonso,alpine,Finish
+2021,2,11,sergio_perez,red_bull,Finish
+2021,2,12,yuki_tsunoda,alphatauri,Finish
+2021,2,13,kimi_raikkonen,alfa_romeo,Finish
+2021,2,14,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,2,15,sebastian_vettel,aston_martin,DNF
+2021,2,16,mick_schumacher,haas,2 LAPS
+2021,2,17,nikita_mazepin,haas,2 LAPS
+2021,2,N/C,valtteri_bottas,mercedes,DNF
+2021,2,N/C,george_russell,williams,DNF
+2021,2,N/C,nicholas_latifi,williams,DNF
+2021,3,1,lewis_hamilton,mercedes,Finish
+2021,3,2,max_verstappen,red_bull,Finish
+2021,3,3,valtteri_bottas,mercedes,Finish
+2021,3,4,sergio_perez,red_bull,Finish
+2021,3,5,lando_norris,mclaren,Finish
+2021,3,6,charles_leclerc,ferrari,Finish
+2021,3,7,esteban_ocon,alpine,Finish
+2021,3,8,fernando_alonso,alpine,Finish
+2021,3,9,daniel_ricciardo,mclaren,Finish
+2021,3,10,pierre_gasly,alphatauri,Finish
+2021,3,11,carlos_sainz,ferrari,Finish
+2021,3,12,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,3,13,sebastian_vettel,aston_martin,1 LAP
+2021,3,14,lance_stroll,aston_martin,1 LAP
+2021,3,15,yuki_tsunoda,alphatauri,1 LAP
+2021,3,16,george_russell,williams,1 LAP
+2021,3,17,mick_schumacher,haas,1 LAP
+2021,3,18,nicholas_latifi,williams,2 LAPS
+2021,3,19,nikita_mazepin,haas,2 LAPS
+2021,3,N/C,kimi_raikkonen,alfa_romeo,DNF
+2021,4,1,lewis_hamilton,mercedes,Finish
+2021,4,2,max_verstappen,red_bull,Finish
+2021,4,3,valtteri_bottas,mercedes,Finish
+2021,4,4,charles_leclerc,ferrari,Finish
+2021,4,5,sergio_perez,red_bull,Finish
+2021,4,6,daniel_ricciardo,mclaren,Finish
+2021,4,7,carlos_sainz,ferrari,Finish
+2021,4,8,lando_norris,mclaren,1 LAP
+2021,4,9,esteban_ocon,alpine,1 LAP
+2021,4,10,pierre_gasly,alphatauri,1 LAP
+2021,4,11,lance_stroll,aston_martin,1 LAP
+2021,4,12,kimi_raikkonen,alfa_romeo,1 LAP
+2021,4,13,sebastian_vettel,aston_martin,1 LAP
+2021,4,14,george_russell,williams,1 LAP
+2021,4,15,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,4,16,nicholas_latifi,williams,1 LAP
+2021,4,17,fernando_alonso,alpine,1 LAP
+2021,4,18,mick_schumacher,haas,1 LAP
+2021,4,19,nikita_mazepin,haas,2 LAPS
+2021,4,N/C,yuki_tsunoda,alphatauri,DNF
+2021,5,1,max_verstappen,red_bull,Finish
+2021,5,2,carlos_sainz,ferrari,Finish
+2021,5,3,lando_norris,mclaren,Finish
+2021,5,4,sergio_perez,red_bull,Finish
+2021,5,5,sebastian_vettel,aston_martin,Finish
+2021,5,6,pierre_gasly,alphatauri,Finish
+2021,5,7,lewis_hamilton,mercedes,Finish
+2021,5,8,lance_stroll,aston_martin,1 LAP
+2021,5,9,esteban_ocon,alpine,1 LAP
+2021,5,10,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,5,11,kimi_raikkonen,alfa_romeo,1 LAP
+2021,5,12,daniel_ricciardo,mclaren,1 LAP
+2021,5,13,fernando_alonso,alpine,1 LAP
+2021,5,14,george_russell,williams,1 LAP
+2021,5,15,nicholas_latifi,williams,1 LAP
+2021,5,16,yuki_tsunoda,alphatauri,1 LAP
+2021,5,17,nikita_mazepin,haas,2 LAPS
+2021,5,18,mick_schumacher,haas,3 LAPS
+2021,5,N/C,valtteri_bottas,mercedes,DNF
+2021,5,N/C,charles_leclerc,ferrari,DNF
+2021,6,1,sergio_perez,red_bull,Finish
+2021,6,2,sebastian_vettel,aston_martin,Finish
+2021,6,3,pierre_gasly,alphatauri,Finish
+2021,6,4,charles_leclerc,ferrari,Finish
+2021,6,5,lando_norris,mclaren,Finish
+2021,6,6,fernando_alonso,alpine,Finish
+2021,6,7,yuki_tsunoda,alphatauri,Finish
+2021,6,8,carlos_sainz,ferrari,Finish
+2021,6,9,daniel_ricciardo,mclaren,Finish
+2021,6,10,kimi_raikkonen,alfa_romeo,Finish
+2021,6,11,antonio_giovinazzi,alfa_romeo,Finish
+2021,6,12,valtteri_bottas,mercedes,Finish
+2021,6,13,mick_schumacher,haas,Finish
+2021,6,14,nikita_mazepin,haas,Finish
+2021,6,15,lewis_hamilton,mercedes,Finish
+2021,6,16,nicholas_latifi,williams,Finish
+2021,6,17,george_russell,williams,DNF
+2021,6,18,max_verstappen,red_bull,DNF
+2021,6,N/C,lance_stroll,aston_martin,DNF
+2021,6,N/C,esteban_ocon,alpine,DNF
+2021,7,1,max_verstappen,red_bull,Finish
+2021,7,2,lewis_hamilton,mercedes,Finish
+2021,7,3,sergio_perez,red_bull,Finish
+2021,7,4,valtteri_bottas,mercedes,Finish
+2021,7,5,lando_norris,mclaren,Finish
+2021,7,6,daniel_ricciardo,mclaren,Finish
+2021,7,7,pierre_gasly,alphatauri,Finish
+2021,7,8,fernando_alonso,alpine,Finish
+2021,7,9,sebastian_vettel,aston_martin,Finish
+2021,7,10,lance_stroll,aston_martin,Finish
+2021,7,11,carlos_sainz,ferrari,Finish
+2021,7,12,george_russell,williams,1 LAP
+2021,7,13,yuki_tsunoda,alphatauri,1 LAP
+2021,7,14,esteban_ocon,alpine,1 LAP
+2021,7,15,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,7,16,charles_leclerc,ferrari,1 LAP
+2021,7,17,kimi_raikkonen,alfa_romeo,1 LAP
+2021,7,18,nicholas_latifi,williams,1 LAP
+2021,7,19,mick_schumacher,haas,1 LAP
+2021,7,20,nikita_mazepin,haas,1 LAP
+2021,8,1,max_verstappen,red_bull,Finish
+2021,8,2,lewis_hamilton,mercedes,Finish
+2021,8,3,valtteri_bottas,mercedes,Finish
+2021,8,4,sergio_perez,red_bull,Finish
+2021,8,5,lando_norris,mclaren,1 LAP
+2021,8,6,carlos_sainz,ferrari,1 LAP
+2021,8,7,charles_leclerc,ferrari,1 LAP
+2021,8,8,lance_stroll,aston_martin,1 LAP
+2021,8,9,fernando_alonso,alpine,1 LAP
+2021,8,10,yuki_tsunoda,alphatauri,1 LAP
+2021,8,11,kimi_raikkonen,alfa_romeo,1 LAP
+2021,8,12,sebastian_vettel,aston_martin,1 LAP
+2021,8,13,daniel_ricciardo,mclaren,1 LAP
+2021,8,14,esteban_ocon,alpine,1 LAP
+2021,8,15,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,8,16,mick_schumacher,haas,1 LAP
+2021,8,17,nicholas_latifi,williams,1 LAP
+2021,8,18,nikita_mazepin,haas,3 LAPS
+2021,8,N/C,george_russell,williams,DNF
+2021,8,N/C,pierre_gasly,alphatauri,DNF
+2021,9,1,max_verstappen,red_bull,Finish
+2021,9,2,valtteri_bottas,mercedes,Finish
+2021,9,3,lando_norris,mclaren,Finish
+2021,9,4,lewis_hamilton,mercedes,Finish
+2021,9,5,carlos_sainz,ferrari,Finish
+2021,9,6,sergio_perez,red_bull,Finish
+2021,9,7,daniel_ricciardo,mclaren,Finish
+2021,9,8,charles_leclerc,ferrari,Finish
+2021,9,9,pierre_gasly,alphatauri,Finish
+2021,9,10,fernando_alonso,alpine,1 LAP
+2021,9,11,george_russell,williams,1 LAP
+2021,9,12,yuki_tsunoda,alphatauri,1 LAP
+2021,9,13,lance_stroll,aston_martin,1 LAP
+2021,9,14,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,9,15,kimi_raikkonen,alfa_romeo,1 LAP
+2021,9,16,nicholas_latifi,williams,1 LAP
+2021,9,17,sebastian_vettel,aston_martin,DNF
+2021,9,18,mick_schumacher,haas,2 LAPS
+2021,9,19,nikita_mazepin,haas,2 LAPS
+2021,9,N/C,esteban_ocon,alpine,DNF
+2021,10,1,lewis_hamilton,mercedes,Finish
+2021,10,2,charles_leclerc,ferrari,Finish
+2021,10,3,valtteri_bottas,mercedes,Finish
+2021,10,4,lando_norris,mclaren,Finish
+2021,10,5,daniel_ricciardo,mclaren,Finish
+2021,10,6,carlos_sainz,ferrari,Finish
+2021,10,7,fernando_alonso,alpine,Finish
+2021,10,8,lance_stroll,aston_martin,Finish
+2021,10,9,esteban_ocon,alpine,Finish
+2021,10,10,yuki_tsunoda,alphatauri,Finish
+2021,10,11,pierre_gasly,alphatauri,Finish
+2021,10,12,george_russell,williams,1 LAP
+2021,10,13,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,10,14,nicholas_latifi,williams,1 LAP
+2021,10,15,kimi_raikkonen,alfa_romeo,1 LAP
+2021,10,16,sergio_perez,red_bull,1 LAP
+2021,10,17,nikita_mazepin,haas,1 LAP
+2021,10,18,mick_schumacher,haas,1 LAP
+2021,10,N/C,sebastian_vettel,aston_martin,DNF
+2021,10,N/C,max_verstappen,red_bull,DNF
+2021,11,1,esteban_ocon,alpine,Finish
+2021,11,2,sebastian_vettel,aston_martin,Finish
+2021,11,3,lewis_hamilton,mercedes,Finish
+2021,11,4,carlos_sainz,ferrari,Finish
+2021,11,5,fernando_alonso,alpine,Finish
+2021,11,6,pierre_gasly,alphatauri,Finish
+2021,11,7,yuki_tsunoda,alphatauri,Finish
+2021,11,8,nicholas_latifi,williams,Finish
+2021,11,9,george_russell,williams,Finish
+2021,11,10,max_verstappen,red_bull,Finish
+2021,11,11,kimi_raikkonen,alfa_romeo,1 LAP
+2021,11,12,daniel_ricciardo,mclaren,1 LAP
+2021,11,13,mick_schumacher,haas,1 LAP
+2021,11,14,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,11,N/C,nikita_mazepin,haas,DNF
+2021,11,N/C,lando_norris,mclaren,DNF
+2021,11,N/C,valtteri_bottas,mercedes,DNF
+2021,11,N/C,sergio_perez,red_bull,DNF
+2021,11,N/C,charles_leclerc,ferrari,DNF
+2021,11,N/C,lance_stroll,aston_martin,DNF
+2021,12,1,max_verstappen,red_bull,Finish
+2021,12,2,george_russell,williams,Finish
+2021,12,3,lewis_hamilton,mercedes,Finish
+2021,12,4,daniel_ricciardo,mclaren,Finish
+2021,12,5,sebastian_vettel,aston_martin,Finish
+2021,12,6,pierre_gasly,alphatauri,Finish
+2021,12,7,esteban_ocon,alpine,Finish
+2021,12,8,charles_leclerc,ferrari,Finish
+2021,12,9,nicholas_latifi,williams,Finish
+2021,12,10,carlos_sainz,ferrari,Finish
+2021,12,11,fernando_alonso,alpine,Finish
+2021,12,12,valtteri_bottas,mercedes,Finish
+2021,12,13,antonio_giovinazzi,alfa_romeo,Finish
+2021,12,14,lando_norris,mclaren,Finish
+2021,12,15,yuki_tsunoda,alphatauri,Finish
+2021,12,16,mick_schumacher,haas,Finish
+2021,12,17,nikita_mazepin,haas,Finish
+2021,12,18,kimi_raikkonen,alfa_romeo,Finish
+2021,12,19,sergio_perez,red_bull,Finish
+2021,12,20,lance_stroll,aston_martin,Finish
+2021,13,1,max_verstappen,red_bull,Finish
+2021,13,2,lewis_hamilton,mercedes,Finish
+2021,13,3,valtteri_bottas,mercedes,Finish
+2021,13,4,pierre_gasly,alphatauri,1 LAP
+2021,13,5,charles_leclerc,ferrari,1 LAP
+2021,13,6,fernando_alonso,alpine,1 LAP
+2021,13,7,carlos_sainz,ferrari,1 LAP
+2021,13,8,sergio_perez,red_bull,1 LAP
+2021,13,9,esteban_ocon,alpine,1 LAP
+2021,13,10,lando_norris,mclaren,1 LAP
+2021,13,11,daniel_ricciardo,mclaren,1 LAP
+2021,13,12,lance_stroll,aston_martin,1 LAP
+2021,13,13,sebastian_vettel,aston_martin,2 LAPS
+2021,13,14,antonio_giovinazzi,alfa_romeo,2 LAPS
+2021,13,15,robert_kubica,alfa_romeo,2 LAPS
+2021,13,16,nicholas_latifi,williams,2 LAPS
+2021,13,17,george_russell,williams,DNF
+2021,13,18,mick_schumacher,haas,3 LAPS
+2021,13,N/C,yuki_tsunoda,alphatauri,DNF
+2021,13,N/C,nikita_mazepin,haas,DNF
+2021,14,1,daniel_ricciardo,mclaren,Finish
+2021,14,2,lando_norris,mclaren,Finish
+2021,14,3,valtteri_bottas,mercedes,Finish
+2021,14,4,charles_leclerc,ferrari,Finish
+2021,14,5,sergio_perez,red_bull,Finish
+2021,14,6,carlos_sainz,ferrari,Finish
+2021,14,7,lance_stroll,aston_martin,Finish
+2021,14,8,fernando_alonso,alpine,Finish
+2021,14,9,george_russell,williams,Finish
+2021,14,10,esteban_ocon,alpine,Finish
+2021,14,11,nicholas_latifi,williams,Finish
+2021,14,12,sebastian_vettel,aston_martin,Finish
+2021,14,13,antonio_giovinazzi,alfa_romeo,Finish
+2021,14,14,robert_kubica,alfa_romeo,Finish
+2021,14,15,mick_schumacher,haas,Finish
+2021,14,N/C,nikita_mazepin,haas,DNF
+2021,14,N/C,lewis_hamilton,mercedes,DNF
+2021,14,N/C,max_verstappen,red_bull,DNF
+2021,14,N/C,pierre_gasly,alphatauri,DNF
+2021,14,N/C,yuki_tsunoda,alphatauri,DNF
+2021,15,1,lewis_hamilton,mercedes,Finish
+2021,15,2,max_verstappen,red_bull,Finish
+2021,15,3,carlos_sainz,ferrari,Finish
+2021,15,4,daniel_ricciardo,mclaren,Finish
+2021,15,5,valtteri_bottas,mercedes,Finish
+2021,15,6,fernando_alonso,alpine,Finish
+2021,15,7,lando_norris,mclaren,Finish
+2021,15,8,kimi_raikkonen,alfa_romeo,Finish
+2021,15,9,sergio_perez,red_bull,Finish
+2021,15,10,george_russell,williams,Finish
+2021,15,11,lance_stroll,aston_martin,Finish
+2021,15,12,sebastian_vettel,aston_martin,1 LAP
+2021,15,13,pierre_gasly,alphatauri,1 LAP
+2021,15,14,esteban_ocon,alpine,1 LAP
+2021,15,15,charles_leclerc,ferrari,1 LAP
+2021,15,16,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,15,17,yuki_tsunoda,alphatauri,1 LAP
+2021,15,18,nikita_mazepin,haas,1 LAP
+2021,15,19,nicholas_latifi,williams,DNF
+2021,15,N/C,mick_schumacher,haas,DNF
+2021,16,1,valtteri_bottas,mercedes,Finish
+2021,16,2,max_verstappen,red_bull,Finish
+2021,16,3,sergio_perez,red_bull,Finish
+2021,16,4,charles_leclerc,ferrari,Finish
+2021,16,5,lewis_hamilton,mercedes,Finish
+2021,16,6,pierre_gasly,alphatauri,Finish
+2021,16,7,lando_norris,mclaren,Finish
+2021,16,8,carlos_sainz,ferrari,Finish
+2021,16,9,lance_stroll,aston_martin,Finish
+2021,16,10,esteban_ocon,alpine,1 LAP
+2021,16,11,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,16,12,kimi_raikkonen,alfa_romeo,1 LAP
+2021,16,13,daniel_ricciardo,mclaren,1 LAP
+2021,16,14,yuki_tsunoda,alphatauri,1 LAP
+2021,16,15,george_russell,williams,1 LAP
+2021,16,16,fernando_alonso,alpine,1 LAP
+2021,16,17,nicholas_latifi,williams,1 LAP
+2021,16,18,sebastian_vettel,aston_martin,1 LAP
+2021,16,19,mick_schumacher,haas,1 LAP
+2021,16,20,nikita_mazepin,haas,2 LAPS
+2021,17,1,max_verstappen,red_bull,Finish
+2021,17,2,lewis_hamilton,mercedes,Finish
+2021,17,3,sergio_perez,red_bull,Finish
+2021,17,4,charles_leclerc,ferrari,Finish
+2021,17,5,daniel_ricciardo,mclaren,Finish
+2021,17,6,valtteri_bottas,mercedes,Finish
+2021,17,7,carlos_sainz,ferrari,Finish
+2021,17,8,lando_norris,mclaren,Finish
+2021,17,9,yuki_tsunoda,alphatauri,1 LAP
+2021,17,10,sebastian_vettel,aston_martin,1 LAP
+2021,17,11,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,17,12,lance_stroll,aston_martin,1 LAP
+2021,17,13,kimi_raikkonen,alfa_romeo,1 LAP
+2021,17,14,george_russell,williams,1 LAP
+2021,17,15,nicholas_latifi,williams,1 LAP
+2021,17,16,mick_schumacher,haas,1 LAP
+2021,17,17,nikita_mazepin,haas,2 LAPS
+2021,17,N/C,fernando_alonso,alpine,DNF
+2021,17,N/C,esteban_ocon,alpine,DNF
+2021,17,N/C,pierre_gasly,alphatauri,DNF
+2021,18,1,max_verstappen,red_bull,Finish
+2021,18,2,lewis_hamilton,mercedes,Finish
+2021,18,3,sergio_perez,red_bull,Finish
+2021,18,4,pierre_gasly,alphatauri,Finish
+2021,18,5,charles_leclerc,ferrari,Finish
+2021,18,6,carlos_sainz,ferrari,1 LAP
+2021,18,7,sebastian_vettel,aston_martin,1 LAP
+2021,18,8,kimi_raikkonen,alfa_romeo,1 LAP
+2021,18,9,fernando_alonso,alpine,1 LAP
+2021,18,10,lando_norris,mclaren,1 LAP
+2021,18,11,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,18,12,daniel_ricciardo,mclaren,1 LAP
+2021,18,13,esteban_ocon,alpine,1 LAP
+2021,18,14,lance_stroll,aston_martin,1 LAP
+2021,18,15,valtteri_bottas,mercedes,2 LAPS
+2021,18,16,george_russell,williams,2 LAPS
+2021,18,17,nicholas_latifi,williams,2 LAPS
+2021,18,18,nikita_mazepin,haas,1 LAP
+2021,18,N/C,mick_schumacher,haas,DNF
+2021,18,N/C,yuki_tsunoda,alphatauri,DNF
+2021,19,1,lewis_hamilton,mercedes,Finish
+2021,19,2,max_verstappen,red_bull,Finish
+2021,19,3,valtteri_bottas,mercedes,Finish
+2021,19,4,sergio_perez,red_bull,Finish
+2021,19,5,charles_leclerc,ferrari,Finish
+2021,19,6,carlos_sainz,ferrari,Finish
+2021,19,7,pierre_gasly,alphatauri,1 LAP
+2021,19,8,esteban_ocon,alpine,1 LAP
+2021,19,9,fernando_alonso,alpine,1 LAP
+2021,19,10,lando_norris,mclaren,1 LAP
+2021,19,11,sebastian_vettel,aston_martin,1 LAP
+2021,19,12,kimi_raikkonen,alfa_romeo,1 LAP
+2021,19,13,george_russell,williams,1 LAP
+2021,19,14,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,19,15,yuki_tsunoda,alphatauri,1 LAP
+2021,19,16,nicholas_latifi,williams,1 LAP
+2021,19,17,nikita_mazepin,haas,1 LAP
+2021,19,18,mick_schumacher,haas,2 LAPS
+2021,19,N/C,daniel_ricciardo,mclaren,DNF
+2021,19,N/C,lance_stroll,aston_martin,DNF
+2021,20,1,lewis_hamilton,mercedes,Finish
+2021,20,2,max_verstappen,red_bull,Finish
+2021,20,3,fernando_alonso,alpine,Finish
+2021,20,4,sergio_perez,red_bull,Finish
+2021,20,5,esteban_ocon,alpine,Finish
+2021,20,6,lance_stroll,aston_martin,Finish
+2021,20,7,carlos_sainz,ferrari,Finish
+2021,20,8,charles_leclerc,ferrari,Finish
+2021,20,9,lando_norris,mclaren,1 LAP
+2021,20,10,sebastian_vettel,aston_martin,1 LAP
+2021,20,11,pierre_gasly,alphatauri,1 LAP
+2021,20,12,daniel_ricciardo,mclaren,1 LAP
+2021,20,13,yuki_tsunoda,alphatauri,1 LAP
+2021,20,14,kimi_raikkonen,alfa_romeo,1 LAP
+2021,20,15,antonio_giovinazzi,alfa_romeo,1 LAP
+2021,20,16,mick_schumacher,haas,1 LAP
+2021,20,17,george_russell,williams,1 LAP
+2021,20,18,nikita_mazepin,haas,2 LAPS
+2021,20,N/C,nicholas_latifi,williams,DNF
+2021,20,N/C,valtteri_bottas,mercedes,DNF
+2021,21,1,lewis_hamilton,mercedes,Finish
+2021,21,2,max_verstappen,red_bull,Finish
+2021,21,3,valtteri_bottas,mercedes,Finish
+2021,21,4,esteban_ocon,alpine,Finish
+2021,21,5,daniel_ricciardo,mclaren,Finish
+2021,21,6,pierre_gasly,alphatauri,Finish
+2021,21,7,charles_leclerc,ferrari,Finish
+2021,21,8,carlos_sainz,ferrari,Finish
+2021,21,9,antonio_giovinazzi,alfa_romeo,Finish
+2021,21,10,lando_norris,mclaren,Finish
+2021,21,11,lance_stroll,aston_martin,Finish
+2021,21,12,nicholas_latifi,williams,Finish
+2021,21,13,fernando_alonso,alpine,1 LAP
+2021,21,14,yuki_tsunoda,alphatauri,1 LAP
+2021,21,15,kimi_raikkonen,alfa_romeo,1 LAP
+2021,21,N/C,sebastian_vettel,aston_martin,DNF
+2021,21,N/C,sergio_perez,red_bull,DNF
+2021,21,N/C,nikita_mazepin,haas,DNF
+2021,21,N/C,george_russell,williams,DNF
+2021,21,N/C,mick_schumacher,haas,DNF
+2021,22,1,max_verstappen,red_bull,Finish
+2021,22,2,lewis_hamilton,mercedes,Finish
+2021,22,3,carlos_sainz,ferrari,Finish
+2021,22,4,yuki_tsunoda,alphatauri,Finish
+2021,22,5,pierre_gasly,alphatauri,Finish
+2021,22,6,valtteri_bottas,mercedes,Finish
+2021,22,7,lando_norris,mclaren,Finish
+2021,22,8,fernando_alonso,alpine,Finish
+2021,22,9,esteban_ocon,alpine,Finish
+2021,22,10,charles_leclerc,ferrari,Finish
+2021,22,11,sebastian_vettel,aston_martin,Finish
+2021,22,12,daniel_ricciardo,mclaren,1 LAP
+2021,22,13,lance_stroll,aston_martin,1 LAP
+2021,22,14,mick_schumacher,haas,1 LAP
+2021,22,15,sergio_perez,red_bull,DNF
+2021,22,N/C,nicholas_latifi,williams,DNF
+2021,22,N/C,antonio_giovinazzi,alfa_romeo,DNF
+2021,22,N/C,george_russell,williams,DNF
+2021,22,N/C,kimi_raikkonen,alfa_romeo,DNF
+2022,1,1,charles_leclerc,ferrari,Finish
+2022,1,2,carlos_sainz,ferrari,Finish
+2022,1,3,lewis_hamilton,mercedes,Finish
+2022,1,4,george_russell,mercedes,Finish
+2022,1,5,kevin_magnussen,haas,Finish
+2022,1,6,valtteri_bottas,alfa_romeo,Finish
+2022,1,7,esteban_ocon,alpine,Finish
+2022,1,8,yuki_tsunoda,alphatauri,Finish
+2022,1,9,fernando_alonso,aston_martin,Finish
+2022,1,10,zhou_guanyu,alfa_romeo,Finish
+2022,1,11,mick_schumacher,haas,Finish
+2022,1,12,lance_stroll,aston_martin,Finish
+2022,1,13,alexander_albon,williams,Finish
+2022,1,14,daniel_ricciardo,mclaren,Finish
+2022,1,15,lando_norris,mclaren,Finish
+2022,1,16,nicholas_latifi,williams,Finish
+2022,1,17,nico_hulkenberg,aston_martin,Finish
+2022,1,18,sergio_perez,red_bull,DNF
+2022,1,19,max_verstappen,red_bull,DNF
+2022,1,N/C,pierre_gasly,alphatauri,DNF
+2022,2,1,max_verstappen,red_bull,Finish
+2022,2,2,charles_leclerc,ferrari,Finish
+2022,2,3,carlos_sainz,ferrari,Finish
+2022,2,4,sergio_perez,red_bull,Finish
+2022,2,5,george_russell,mercedes,Finish
+2022,2,6,esteban_ocon,alpine,Finish
+2022,2,7,lando_norris,mclaren,Finish
+2022,2,8,pierre_gasly,alphatauri,Finish
+2022,2,9,kevin_magnussen,haas,Finish
+2022,2,10,lewis_hamilton,mercedes,Finish
+2022,2,11,zhou_guanyu,alfa_romeo,Finish
+2022,2,12,nico_hulkenberg,aston_martin,Finish
+2022,2,13,lance_stroll,aston_martin,1 LAP
+2022,2,14,alexander_albon,williams,DNF
+2022,2,N/C,valtteri_bottas,alfa_romeo,DNF
+2022,2,N/C,fernando_alonso,aston_martin,DNF
+2022,2,N/C,daniel_ricciardo,mclaren,DNF
+2022,2,N/C,nicholas_latifi,williams,DNF
+2022,2,N/C,yuki_tsunoda,alphatauri,DNF
+2022,3,1,charles_leclerc,ferrari,Finish
+2022,3,2,sergio_perez,red_bull,Finish
+2022,3,3,george_russell,mercedes,Finish
+2022,3,4,lewis_hamilton,mercedes,Finish
+2022,3,5,lando_norris,mclaren,Finish
+2022,3,6,daniel_ricciardo,mclaren,Finish
+2022,3,7,esteban_ocon,alpine,Finish
+2022,3,8,valtteri_bottas,alfa_romeo,Finish
+2022,3,9,pierre_gasly,alphatauri,Finish
+2022,3,10,alexander_albon,williams,Finish
+2022,3,11,zhou_guanyu,alfa_romeo,Finish
+2022,3,12,lance_stroll,aston_martin,Finish
+2022,3,13,mick_schumacher,haas,1 LAP
+2022,3,14,kevin_magnussen,haas,1 LAP
+2022,3,15,yuki_tsunoda,alphatauri,1 LAP
+2022,3,16,nicholas_latifi,williams,1 LAP
+2022,3,17,fernando_alonso,aston_martin,1 LAP
+2022,3,N/C,max_verstappen,red_bull,DNF
+2022,3,N/C,sebastian_vettel,aston_martin,DNF
+2022,3,N/C,carlos_sainz,ferrari,DNF
+2022,4,1,max_verstappen,red_bull,Finish
+2022,4,2,sergio_perez,red_bull,Finish
+2022,4,3,lando_norris,mclaren,Finish
+2022,4,4,george_russell,mercedes,Finish
+2022,4,5,valtteri_bottas,alfa_romeo,Finish
+2022,4,6,charles_leclerc,ferrari,Finish
+2022,4,7,yuki_tsunoda,alphatauri,Finish
+2022,4,8,sebastian_vettel,aston_martin,Finish
+2022,4,9,kevin_magnussen,haas,Finish
+2022,4,10,lance_stroll,aston_martin,1 LAP
+2022,4,11,alexander_albon,williams,1 LAP
+2022,4,12,pierre_gasly,alphatauri,1 LAP
+2022,4,13,lewis_hamilton,mercedes,1 LAP
+2022,4,14,esteban_ocon,alpine,1 LAP
+2022,4,15,zhou_guanyu,alfa_romeo,1 LAP
+2022,4,16,nicholas_latifi,williams,1 LAP
+2022,4,17,mick_schumacher,haas,1 LAP
+2022,4,18,daniel_ricciardo,mclaren,1 LAP
+2022,4,N/C,fernando_alonso,aston_martin,DNF
+2022,4,N/C,carlos_sainz,ferrari,DNF
+2022,5,1,max_verstappen,red_bull,Finish
+2022,5,2,charles_leclerc,ferrari,Finish
+2022,5,3,carlos_sainz,ferrari,Finish
+2022,5,4,sergio_perez,red_bull,Finish
+2022,5,5,george_russell,mercedes,Finish
+2022,5,6,lewis_hamilton,mercedes,Finish
+2022,5,7,valtteri_bottas,alfa_romeo,Finish
+2022,5,8,esteban_ocon,alpine,Finish
+2022,5,9,alexander_albon,williams,Finish
+2022,5,10,lance_stroll,aston_martin,Finish
+2022,5,11,fernando_alonso,aston_martin,Finish
+2022,5,12,yuki_tsunoda,alphatauri,Finish
+2022,5,13,daniel_ricciardo,mclaren,Finish
+2022,5,14,nicholas_latifi,williams,Finish
+2022,5,15,mick_schumacher,haas,Finish
+2022,5,16,kevin_magnussen,haas,DNF
+2022,5,17,sebastian_vettel,aston_martin,DNF
+2022,5,N/C,pierre_gasly,alphatauri,DNF
+2022,5,N/C,lando_norris,mclaren,DNF
+2022,5,N/C,zhou_guanyu,alfa_romeo,DNF
+2022,6,1,max_verstappen,red_bull,Finish
+2022,6,2,sergio_perez,red_bull,Finish
+2022,6,3,george_russell,mercedes,Finish
+2022,6,4,carlos_sainz,ferrari,Finish
+2022,6,5,lewis_hamilton,mercedes,Finish
+2022,6,6,valtteri_bottas,alfa_romeo,Finish
+2022,6,7,esteban_ocon,alpine,Finish
+2022,6,8,lando_norris,mclaren,Finish
+2022,6,9,fernando_alonso,aston_martin,1 LAP
+2022,6,10,yuki_tsunoda,alphatauri,1 LAP
+2022,6,11,sebastian_vettel,aston_martin,1 LAP
+2022,6,12,daniel_ricciardo,mclaren,1 LAP
+2022,6,13,pierre_gasly,alphatauri,1 LAP
+2022,6,14,mick_schumacher,haas,1 LAP
+2022,6,15,lance_stroll,aston_martin,1 LAP
+2022,6,16,nicholas_latifi,williams,1 LAP
+2022,6,17,kevin_magnussen,haas,2 LAPS
+2022,6,18,alexander_albon,williams,2 LAPS
+2022,6,N/C,zhou_guanyu,alfa_romeo,DNF
+2022,6,N/C,charles_leclerc,ferrari,DNF
+2022,7,1,sergio_perez,red_bull,Finish
+2022,7,2,carlos_sainz,ferrari,Finish
+2022,7,3,max_verstappen,red_bull,Finish
+2022,7,4,charles_leclerc,ferrari,Finish
+2022,7,5,george_russell,mercedes,Finish
+2022,7,6,lando_norris,mclaren,Finish
+2022,7,7,fernando_alonso,aston_martin,Finish
+2022,7,8,lewis_hamilton,mercedes,Finish
+2022,7,9,valtteri_bottas,alfa_romeo,Finish
+2022,7,10,sebastian_vettel,aston_martin,Finish
+2022,7,11,pierre_gasly,alphatauri,Finish
+2022,7,12,esteban_ocon,alpine,Finish
+2022,7,13,daniel_ricciardo,mclaren,Finish
+2022,7,14,lance_stroll,aston_martin,Finish
+2022,7,15,nicholas_latifi,williams,1 LAP
+2022,7,16,zhou_guanyu,alfa_romeo,1 LAP
+2022,7,17,yuki_tsunoda,alphatauri,1 LAP
+2022,7,N/C,alexander_albon,williams,DNF
+2022,7,N/C,mick_schumacher,haas,DNF
+2022,7,N/C,kevin_magnussen,haas,DNF
+2022,8,1,max_verstappen,red_bull,Finish
+2022,8,2,sergio_perez,red_bull,Finish
+2022,8,3,george_russell,mercedes,Finish
+2022,8,4,lewis_hamilton,mercedes,Finish
+2022,8,5,pierre_gasly,alphatauri,Finish
+2022,8,6,sebastian_vettel,aston_martin,Finish
+2022,8,7,fernando_alonso,aston_martin,Finish
+2022,8,8,daniel_ricciardo,mclaren,Finish
+2022,8,9,lando_norris,mclaren,Finish
+2022,8,10,esteban_ocon,alpine,Finish
+2022,8,11,valtteri_bottas,alfa_romeo,1 LAP
+2022,8,12,alexander_albon,williams,1 LAP
+2022,8,13,yuki_tsunoda,alphatauri,1 LAP
+2022,8,14,mick_schumacher,haas,1 LAP
+2022,8,15,nicholas_latifi,williams,1 LAP
+2022,8,16,lance_stroll,aston_martin,DNF
+2022,8,N/C,kevin_magnussen,haas,DNF
+2022,8,N/C,zhou_guanyu,alfa_romeo,DNF
+2022,8,N/C,charles_leclerc,ferrari,DNF
+2022,8,N/C,carlos_sainz,ferrari,DNF
+2022,9,1,max_verstappen,red_bull,Finish
+2022,9,2,carlos_sainz,ferrari,Finish
+2022,9,3,lewis_hamilton,mercedes,Finish
+2022,9,4,george_russell,mercedes,Finish
+2022,9,5,charles_leclerc,ferrari,Finish
+2022,9,6,esteban_ocon,alpine,Finish
+2022,9,7,valtteri_bottas,alfa_romeo,Finish
+2022,9,8,zhou_guanyu,alfa_romeo,Finish
+2022,9,9,fernando_alonso,aston_martin,Finish
+2022,9,10,lance_stroll,aston_martin,Finish
+2022,9,11,daniel_ricciardo,mclaren,Finish
+2022,9,12,sebastian_vettel,aston_martin,Finish
+2022,9,13,alexander_albon,williams,Finish
+2022,9,14,pierre_gasly,alphatauri,Finish
+2022,9,15,lando_norris,mclaren,Finish
+2022,9,16,nicholas_latifi,williams,Finish
+2022,9,17,kevin_magnussen,haas,Finish
+2022,9,N/C,yuki_tsunoda,alphatauri,DNF
+2022,9,N/C,mick_schumacher,haas,DNF
+2022,9,N/C,sergio_perez,red_bull,DNF
+2022,10,1,carlos_sainz,ferrari,Finish
+2022,10,2,sergio_perez,red_bull,Finish
+2022,10,3,lewis_hamilton,mercedes,Finish
+2022,10,4,charles_leclerc,ferrari,Finish
+2022,10,5,fernando_alonso,aston_martin,Finish
+2022,10,6,lando_norris,mclaren,Finish
+2022,10,7,max_verstappen,red_bull,Finish
+2022,10,8,mick_schumacher,haas,Finish
+2022,10,9,sebastian_vettel,aston_martin,Finish
+2022,10,10,kevin_magnussen,haas,Finish
+2022,10,11,lance_stroll,aston_martin,Finish
+2022,10,12,nicholas_latifi,williams,Finish
+2022,10,13,daniel_ricciardo,mclaren,Finish
+2022,10,14,yuki_tsunoda,alphatauri,Finish
+2022,10,N/C,esteban_ocon,alpine,DNF
+2022,10,N/C,pierre_gasly,alphatauri,DNF
+2022,10,N/C,valtteri_bottas,alfa_romeo,DNF
+2022,10,N/C,george_russell,mercedes,DNF
+2022,10,N/C,zhou_guanyu,alfa_romeo,DNF
+2022,10,N/C,alexander_albon,williams,DNF
+2022,11,1,charles_leclerc,ferrari,Finish
+2022,11,2,max_verstappen,red_bull,Finish
+2022,11,3,lewis_hamilton,mercedes,Finish
+2022,11,4,george_russell,mercedes,Finish
+2022,11,5,esteban_ocon,alpine,Finish
+2022,11,6,mick_schumacher,haas,1 LAP
+2022,11,7,lando_norris,mclaren,1 LAP
+2022,11,8,kevin_magnussen,haas,1 LAP
+2022,11,9,daniel_ricciardo,mclaren,1 LAP
+2022,11,10,fernando_alonso,aston_martin,1 LAP
+2022,11,11,valtteri_bottas,alfa_romeo,1 LAP
+2022,11,12,alexander_albon,williams,1 LAP
+2022,11,13,lance_stroll,aston_martin,1 LAP
+2022,11,14,zhou_guanyu,alfa_romeo,1 LAP
+2022,11,15,pierre_gasly,alphatauri,1 LAP
+2022,11,16,yuki_tsunoda,alphatauri,1 LAP
+2022,11,17,sebastian_vettel,aston_martin,1 LAP
+2022,11,N/C,carlos_sainz,ferrari,DNF
+2022,11,N/C,nicholas_latifi,williams,DNF
+2022,11,N/C,sergio_perez,red_bull,DNF
+2022,12,1,max_verstappen,red_bull,Finish
+2022,12,2,lewis_hamilton,mercedes,Finish
+2022,12,3,george_russell,mercedes,Finish
+2022,12,4,sergio_perez,red_bull,Finish
+2022,12,5,carlos_sainz,ferrari,Finish
+2022,12,6,fernando_alonso,aston_martin,Finish
+2022,12,7,lando_norris,mclaren,Finish
+2022,12,8,esteban_ocon,alpine,Finish
+2022,12,9,daniel_ricciardo,mclaren,Finish
+2022,12,10,lance_stroll,aston_martin,Finish
+2022,12,11,sebastian_vettel,aston_martin,Finish
+2022,12,12,pierre_gasly,alphatauri,Finish
+2022,12,13,alexander_albon,williams,Finish
+2022,12,14,valtteri_bottas,alfa_romeo,Finish
+2022,12,15,mick_schumacher,haas,Finish
+2022,12,16,zhou_guanyu,alfa_romeo,6 LAPS
+2022,12,N/C,nicholas_latifi,williams,DNF
+2022,12,N/C,kevin_magnussen,haas,DNF
+2022,12,N/C,charles_leclerc,ferrari,DNF
+2022,12,N/C,yuki_tsunoda,alphatauri,DNF
+2022,13,1,max_verstappen,red_bull,Finish
+2022,13,2,lewis_hamilton,mercedes,Finish
+2022,13,3,george_russell,mercedes,Finish
+2022,13,4,carlos_sainz,ferrari,Finish
+2022,13,5,sergio_perez,red_bull,Finish
+2022,13,6,charles_leclerc,ferrari,Finish
+2022,13,7,lando_norris,mclaren,Finish
+2022,13,8,fernando_alonso,aston_martin,1 LAP
+2022,13,9,esteban_ocon,alpine,1 LAP
+2022,13,10,sebastian_vettel,aston_martin,1 LAP
+2022,13,11,lance_stroll,aston_martin,1 LAP
+2022,13,12,pierre_gasly,alphatauri,1 LAP
+2022,13,13,zhou_guanyu,alfa_romeo,1 LAP
+2022,13,14,mick_schumacher,haas,1 LAP
+2022,13,15,daniel_ricciardo,mclaren,1 LAP
+2022,13,16,kevin_magnussen,haas,1 LAP
+2022,13,17,alexander_albon,williams,1 LAP
+2022,13,18,nicholas_latifi,williams,1 LAP
+2022,13,19,yuki_tsunoda,alphatauri,1 LAP
+2022,13,20,valtteri_bottas,alfa_romeo,DNF
+2022,14,1,max_verstappen,red_bull,Finish
+2022,14,2,sergio_perez,red_bull,Finish
+2022,14,3,carlos_sainz,ferrari,Finish
+2022,14,4,george_russell,mercedes,Finish
+2022,14,5,fernando_alonso,aston_martin,Finish
+2022,14,6,charles_leclerc,ferrari,Finish
+2022,14,7,esteban_ocon,alpine,Finish
+2022,14,8,sebastian_vettel,aston_martin,Finish
+2022,14,9,pierre_gasly,alphatauri,Finish
+2022,14,10,alexander_albon,williams,Finish
+2022,14,11,lance_stroll,aston_martin,Finish
+2022,14,12,lando_norris,mclaren,Finish
+2022,14,13,yuki_tsunoda,alphatauri,Finish
+2022,14,14,zhou_guanyu,alfa_romeo,Finish
+2022,14,15,daniel_ricciardo,mclaren,Finish
+2022,14,16,kevin_magnussen,haas,1 LAP
+2022,14,17,mick_schumacher,haas,1 LAP
+2022,14,18,nicholas_latifi,williams,1 LAP
+2022,14,N/C,valtteri_bottas,alfa_romeo,DNF
+2022,14,N/C,lewis_hamilton,mercedes,DNF
+2022,15,1,max_verstappen,red_bull,Finish
+2022,15,2,george_russell,mercedes,Finish
+2022,15,3,charles_leclerc,ferrari,Finish
+2022,15,4,lewis_hamilton,mercedes,Finish
+2022,15,5,sergio_perez,red_bull,Finish
+2022,15,6,fernando_alonso,aston_martin,Finish
+2022,15,7,lando_norris,mclaren,Finish
+2022,15,8,carlos_sainz,ferrari,Finish
+2022,15,9,esteban_ocon,alpine,Finish
+2022,15,10,lance_stroll,aston_martin,Finish
+2022,15,11,pierre_gasly,alphatauri,Finish
+2022,15,12,alexander_albon,williams,Finish
+2022,15,13,mick_schumacher,haas,Finish
+2022,15,14,sebastian_vettel,aston_martin,Finish
+2022,15,15,kevin_magnussen,haas,Finish
+2022,15,16,zhou_guanyu,alfa_romeo,Finish
+2022,15,17,daniel_ricciardo,mclaren,Finish
+2022,15,18,nicholas_latifi,williams,1 LAP
+2022,15,N/C,valtteri_bottas,alfa_romeo,DNF
+2022,15,N/C,yuki_tsunoda,alphatauri,DNF
+2022,16,1,max_verstappen,red_bull,Finish
+2022,16,2,charles_leclerc,ferrari,Finish
+2022,16,3,george_russell,mercedes,Finish
+2022,16,4,carlos_sainz,ferrari,Finish
+2022,16,5,lewis_hamilton,mercedes,Finish
+2022,16,6,sergio_perez,red_bull,Finish
+2022,16,7,lando_norris,mclaren,Finish
+2022,16,8,pierre_gasly,alphatauri,Finish
+2022,16,9,nyck_de_vries,williams,Finish
+2022,16,10,zhou_guanyu,alfa_romeo,Finish
+2022,16,11,esteban_ocon,alpine,Finish
+2022,16,12,mick_schumacher,haas,Finish
+2022,16,13,valtteri_bottas,alfa_romeo,1 LAP
+2022,16,14,yuki_tsunoda,alphatauri,1 LAP
+2022,16,15,nicholas_latifi,williams,1 LAP
+2022,16,16,kevin_magnussen,haas,1 LAP
+2022,16,N/C,daniel_ricciardo,mclaren,DNF
+2022,16,N/C,lance_stroll,aston_martin,DNF
+2022,16,N/C,fernando_alonso,aston_martin,DNF
+2022,16,N/C,sebastian_vettel,aston_martin,DNF
+2022,17,1,sergio_perez,red_bull,Finish
+2022,17,2,charles_leclerc,ferrari,Finish
+2022,17,3,carlos_sainz,ferrari,Finish
+2022,17,4,lando_norris,mclaren,Finish
+2022,17,5,daniel_ricciardo,mclaren,Finish
+2022,17,6,lance_stroll,aston_martin,Finish
+2022,17,7,max_verstappen,red_bull,Finish
+2022,17,8,sebastian_vettel,aston_martin,Finish
+2022,17,9,lewis_hamilton,mercedes,Finish
+2022,17,10,pierre_gasly,alphatauri,Finish
+2022,17,11,valtteri_bottas,alfa_romeo,Finish
+2022,17,12,kevin_magnussen,haas,Finish
+2022,17,13,mick_schumacher,haas,1 LAP
+2022,17,14,george_russell,mercedes,1 LAP
+2022,17,N/C,yuki_tsunoda,alphatauri,DNF
+2022,17,N/C,esteban_ocon,alpine,DNF
+2022,17,N/C,alexander_albon,williams,DNF
+2022,17,N/C,fernando_alonso,aston_martin,DNF
+2022,17,N/C,nicholas_latifi,williams,DNF
+2022,17,N/C,zhou_guanyu,alfa_romeo,DNF
+2022,18,1,max_verstappen,red_bull,Finish
+2022,18,2,sergio_perez,red_bull,Finish
+2022,18,3,charles_leclerc,ferrari,Finish
+2022,18,4,esteban_ocon,alpine,Finish
+2022,18,5,lewis_hamilton,mercedes,Finish
+2022,18,6,sebastian_vettel,aston_martin,Finish
+2022,18,7,fernando_alonso,aston_martin,Finish
+2022,18,8,george_russell,mercedes,Finish
+2022,18,9,nicholas_latifi,williams,Finish
+2022,18,10,lando_norris,mclaren,Finish
+2022,18,11,daniel_ricciardo,mclaren,Finish
+2022,18,12,lance_stroll,aston_martin,Finish
+2022,18,13,yuki_tsunoda,alphatauri,Finish
+2022,18,14,kevin_magnussen,haas,Finish
+2022,18,15,valtteri_bottas,alfa_romeo,Finish
+2022,18,16,zhou_guanyu,alfa_romeo,Finish
+2022,18,17,mick_schumacher,haas,Finish
+2022,18,18,pierre_gasly,alphatauri,Finish
+2022,18,N/C,carlos_sainz,ferrari,DNF
+2022,18,N/C,alexander_albon,williams,DNF
+2022,19,1,max_verstappen,red_bull,Finish
+2022,19,2,lewis_hamilton,mercedes,Finish
+2022,19,3,charles_leclerc,ferrari,Finish
+2022,19,4,sergio_perez,red_bull,Finish
+2022,19,5,george_russell,mercedes,Finish
+2022,19,6,lando_norris,mclaren,Finish
+2022,19,7,sebastian_vettel,aston_martin,Finish
+2022,19,8,kevin_magnussen,haas,Finish
+2022,19,9,yuki_tsunoda,alphatauri,Finish
+2022,19,10,esteban_ocon,alpine,Finish
+2022,19,11,zhou_guanyu,alfa_romeo,Finish
+2022,19,12,alexander_albon,williams,Finish
+2022,19,13,pierre_gasly,alphatauri,Finish
+2022,19,14,mick_schumacher,haas,Finish
+2022,19,15,fernando_alonso,aston_martin,Finish
+2022,19,16,daniel_ricciardo,mclaren,Finish
+2022,19,17,nicholas_latifi,williams,Finish
+2022,19,N/C,lance_stroll,aston_martin,DNF
+2022,19,N/C,valtteri_bottas,alfa_romeo,DNF
+2022,19,N/C,carlos_sainz,ferrari,DNF
+2022,20,1,max_verstappen,red_bull,Finish
+2022,20,2,lewis_hamilton,mercedes,Finish
+2022,20,3,sergio_perez,red_bull,Finish
+2022,20,4,george_russell,mercedes,Finish
+2022,20,5,carlos_sainz,ferrari,Finish
+2022,20,6,charles_leclerc,ferrari,Finish
+2022,20,7,daniel_ricciardo,mclaren,1 LAP
+2022,20,8,esteban_ocon,alpine,1 LAP
+2022,20,9,lando_norris,mclaren,1 LAP
+2022,20,10,valtteri_bottas,alfa_romeo,1 LAP
+2022,20,11,pierre_gasly,alphatauri,1 LAP
+2022,20,12,alexander_albon,williams,1 LAP
+2022,20,13,zhou_guanyu,alfa_romeo,1 LAP
+2022,20,14,sebastian_vettel,aston_martin,1 LAP
+2022,20,15,lance_stroll,aston_martin,1 LAP
+2022,20,16,mick_schumacher,haas,1 LAP
+2022,20,17,kevin_magnussen,haas,1 LAP
+2022,20,18,nicholas_latifi,williams,1 LAP
+2022,20,19,fernando_alonso,aston_martin,DNF
+2022,20,N/C,yuki_tsunoda,alphatauri,DNF
+2022,21,1,george_russell,mercedes,Finish
+2022,21,2,lewis_hamilton,mercedes,Finish
+2022,21,3,carlos_sainz,ferrari,Finish
+2022,21,4,charles_leclerc,ferrari,Finish
+2022,21,5,fernando_alonso,aston_martin,Finish
+2022,21,6,max_verstappen,red_bull,Finish
+2022,21,7,sergio_perez,red_bull,Finish
+2022,21,8,esteban_ocon,alpine,Finish
+2022,21,9,valtteri_bottas,alfa_romeo,Finish
+2022,21,10,lance_stroll,aston_martin,Finish
+2022,21,11,sebastian_vettel,aston_martin,Finish
+2022,21,12,zhou_guanyu,alfa_romeo,Finish
+2022,21,13,mick_schumacher,haas,Finish
+2022,21,14,pierre_gasly,alphatauri,Finish
+2022,21,15,alexander_albon,williams,Finish
+2022,21,16,nicholas_latifi,williams,Finish
+2022,21,17,yuki_tsunoda,alphatauri,1 LAP
+2022,21,N/C,lando_norris,mclaren,DNF
+2022,21,N/C,kevin_magnussen,haas,DNF
+2022,21,N/C,daniel_ricciardo,mclaren,DNF
+2022,22,1,max_verstappen,red_bull,Finish
+2022,22,2,charles_leclerc,ferrari,Finish
+2022,22,3,sergio_perez,red_bull,Finish
+2022,22,4,carlos_sainz,ferrari,Finish
+2022,22,5,george_russell,mercedes,Finish
+2022,22,6,lando_norris,mclaren,Finish
+2022,22,7,esteban_ocon,alpine,Finish
+2022,22,8,lance_stroll,aston_martin,Finish
+2022,22,9,daniel_ricciardo,mclaren,Finish
+2022,22,10,sebastian_vettel,aston_martin,Finish
+2022,22,11,yuki_tsunoda,alphatauri,Finish
+2022,22,12,zhou_guanyu,alfa_romeo,1 LAP
+2022,22,13,alexander_albon,williams,1 LAP
+2022,22,14,pierre_gasly,alphatauri,1 LAP
+2022,22,15,valtteri_bottas,alfa_romeo,1 LAP
+2022,22,16,mick_schumacher,haas,1 LAP
+2022,22,17,kevin_magnussen,haas,1 LAP
+2022,22,18,lewis_hamilton,mercedes,DNF
+2022,22,19,nicholas_latifi,williams,DNF
+2022,22,N/C,fernando_alonso,aston_martin,DNF
+2023,1,1,max_verstappen,red_bull,Finish
+2023,1,2,sergio_perez,red_bull,Finish
+2023,1,3,fernando_alonso,aston_martin,Finish
+2023,1,4,carlos_sainz,ferrari,Finish
+2023,1,5,lewis_hamilton,mercedes,Finish
+2023,1,6,lance_stroll,aston_martin,Finish
+2023,1,7,george_russell,mercedes,Finish
+2023,1,8,valtteri_bottas,red_bull,Finish
+2023,1,9,pierre_gasly,alpine,Finish
+2023,1,10,alexander_albon,williams,Finish
+2023,1,11,yuki_tsunoda,alphatauri,Finish
+2023,1,12,logan_sargeant,williams,1 LAP
+2023,1,13,kevin_magnussen,haas,1 LAP
+2023,1,14,nyck_de_vries,alphatauri,1 LAP
+2023,1,15,nico_hulkenberg,haas,1 LAP
+2023,1,16,zhou_guanyu,alfa_romeo,1 LAP
+2023,1,17,lando_norris,mclaren,1 LAP
+2023,1,N/C,esteban_ocon,alpine,DNF
+2023,1,N/C,charles_leclerc,ferrari,DNF
+2023,1,N/C,oscar_piastri,mclaren,DNF
+2023,2,1,sergio_perez,red_bull,Finish
+2023,2,2,max_verstappen,red_bull,Finish
+2023,2,3,fernando_alonso,aston_martin,Finish
+2023,2,4,george_russell,mercedes,Finish
+2023,2,5,lewis_hamilton,mercedes,Finish
+2023,2,6,carlos_sainz,ferrari,Finish
+2023,2,7,charles_leclerc,ferrari,Finish
+2023,2,8,esteban_ocon,alpine,Finish
+2023,2,9,pierre_gasly,alpine,Finish
+2023,2,10,kevin_magnussen,haas,Finish
+2023,2,11,yuki_tsunoda,alphatauri,Finish
+2023,2,12,nico_hulkenberg,haas,Finish
+2023,2,13,zhou_guanyu,alfa_romeo,Finish
+2023,2,14,nyck_de_vries,alphatauri,Finish
+2023,2,15,oscar_piastri,mclaren,Finish
+2023,2,16,logan_sargeant,williams,Finish
+2023,2,17,lando_norris,mclaren,Finish
+2023,2,18,valtteri_bottas,red_bull,1 LAP
+2023,2,N/C,alexander_albon,williams,DNF
+2023,2,N/C,lance_stroll,aston_martin,DNF
+2023,3,1,max_verstappen,red_bull,Finish
+2023,3,2,lewis_hamilton,mercedes,Finish
+2023,3,3,fernando_alonso,aston_martin,Finish
+2023,3,4,lance_stroll,aston_martin,Finish
+2023,3,5,sergio_perez,red_bull,Finish
+2023,3,6,lando_norris,mclaren,Finish
+2023,3,7,nico_hulkenberg,haas,Finish
+2023,3,8,oscar_piastri,mclaren,Finish
+2023,3,9,zhou_guanyu,alfa_romeo,Finish
+2023,3,10,yuki_tsunoda,alphatauri,Finish
+2023,3,11,valtteri_bottas,red_bull,Finish
+2023,3,12,carlos_sainz,ferrari,Finish
+2023,3,13,pierre_gasly,alpine,DNF
+2023,3,14,esteban_ocon,alpine,DNF
+2023,3,15,nyck_de_vries,alphatauri,DNF
+2023,3,16,logan_sargeant,williams,DNF
+2023,3,17,kevin_magnussen,haas,DNF
+2023,3,N/C,george_russell,mercedes,DNF
+2023,3,N/C,alexander_albon,williams,DNF
+2023,3,N/C,charles_leclerc,ferrari,DNF
+2023,4,1,sergio_perez,red_bull,Finish
+2023,4,2,max_verstappen,red_bull,Finish
+2023,4,3,charles_leclerc,ferrari,Finish
+2023,4,4,fernando_alonso,aston_martin,Finish
+2023,4,5,carlos_sainz,ferrari,Finish
+2023,4,6,lewis_hamilton,mercedes,Finish
+2023,4,7,lance_stroll,aston_martin,Finish
+2023,4,8,george_russell,mercedes,Finish
+2023,4,9,lando_norris,mclaren,Finish
+2023,4,10,yuki_tsunoda,alphatauri,Finish
+2023,4,11,oscar_piastri,mclaren,Finish
+2023,4,12,alexander_albon,williams,Finish
+2023,4,13,kevin_magnussen,haas,Finish
+2023,4,14,pierre_gasly,alpine,Finish
+2023,4,15,esteban_ocon,alpine,Finish
+2023,4,16,logan_sargeant,williams,Finish
+2023,4,17,nico_hulkenberg,haas,1 LAP
+2023,4,18,valtteri_bottas,red_bull,1 LAP
+2023,4,N/C,zhou_guanyu,alfa_romeo,DNF
+2023,4,N/C,nyck_de_vries,alphatauri,DNF
