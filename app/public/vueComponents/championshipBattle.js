@@ -99,10 +99,15 @@ export const ChampionshipBattleChart = {
 
             const numRaces = races.length;
 
+            let standingsApiUrls = [];
             for (let race of races) {
-                standings.push.apply(standings, (await (await fetch(`/api/${this.championshipYear}/${race.round}/driver_standings`)).json()).driver_standings);
+                standingsApiUrls.push(`/api/${this.championshipYear}/${race.round}/driver_standings`);
             }
-
+            let fetchAllStandings = await this.fetchUrlsInOrder(standingsApiUrls);
+            for(let singleStandings of fetchAllStandings) {
+                standings.push.apply(standings, singleStandings);
+            }
+            
             const CHART_COLORS = {
                 red: 'rgb(255, 99, 132)',
                 orange: 'rgb(255, 159, 64)',
@@ -153,6 +158,11 @@ export const ChampionshipBattleChart = {
                 arr.unshift(0);
             }
             return arr;
-        }
+        },
+        fetchUrlsInOrder: async function (urls) {
+            const fetchPromises = urls.map(url => fetch(url).then(response => response.json()).then(res => res.driver_standings));
+            const results = await Promise.all(fetchPromises);
+            return results;
+          }
     }
 };
