@@ -5,10 +5,10 @@ const fs = require('fs');
 require("dotenv").config({ path: __dirname + '/private/settings.env' });
 
 const db = require("./mongodb.js");
-const generalAPI = require("./api-general.js");
-const raceAPI = require("./api-race.js");
-const oldRaceAPI = require("./api-race-unoptimized.js");
-const oldGeneralAPI = require("./api-general-unoptimized.js");
+const generalAPI = require("./api/api-general.js");
+const raceAPI = require("./api/api-race.js");
+const oldRaceAPI = require("./api/api-race-unoptimized.js");
+const oldGeneralAPI = require("./api/api-general-unoptimized.js");
 
 app.use("/api", generalAPI);
 app.use("/api", raceAPI);
