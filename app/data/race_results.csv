@@ -884,7 +884,7 @@ year,round,finish_position,driver_id,constructor_id,finish_status
 2023,1,5,lewis_hamilton,mercedes,Finish
 2023,1,6,lance_stroll,aston_martin,Finish
 2023,1,7,george_russell,mercedes,Finish
-2023,1,8,valtteri_bottas,red_bull,Finish
+2023,1,8,valtteri_bottas,alfa_romeo,Finish
 2023,1,9,pierre_gasly,alpine,Finish
 2023,1,10,alexander_albon,williams,Finish
 2023,1,11,yuki_tsunoda,alphatauri,Finish
@@ -914,7 +914,7 @@ year,round,finish_position,driver_id,constructor_id,finish_status
 2023,2,15,oscar_piastri,mclaren,Finish
 2023,2,16,logan_sargeant,williams,Finish
 2023,2,17,lando_norris,mclaren,Finish
-2023,2,18,valtteri_bottas,red_bull,1 LAP
+2023,2,18,valtteri_bottas,alfa_romeo,1 LAP
 2023,2,N/C,alexander_albon,williams,DNF
 2023,2,N/C,lance_stroll,aston_martin,DNF
 2023,3,1,max_verstappen,red_bull,Finish
@@ -927,7 +927,7 @@ year,round,finish_position,driver_id,constructor_id,finish_status
 2023,3,8,oscar_piastri,mclaren,Finish
 2023,3,9,zhou_guanyu,alfa_romeo,Finish
 2023,3,10,yuki_tsunoda,alphatauri,Finish
-2023,3,11,valtteri_bottas,red_bull,Finish
+2023,3,11,valtteri_bottas,alfa_romeo,Finish
 2023,3,12,carlos_sainz,ferrari,Finish
 2023,3,13,pierre_gasly,alpine,DNF
 2023,3,14,esteban_ocon,alpine,DNF
@@ -954,6 +954,6 @@ year,round,finish_position,driver_id,constructor_id,finish_status
 2023,4,15,esteban_ocon,alpine,Finish
 2023,4,16,logan_sargeant,williams,Finish
 2023,4,17,nico_hulkenberg,haas,1 LAP
-2023,4,18,valtteri_bottas,red_bull,1 LAP
+2023,4,18,valtteri_bottas,alfa_romeo,1 LAP
 2023,4,N/C,zhou_guanyu,alfa_romeo,DNF
 2023,4,N/C,nyck_de_vries,alphatauri,DNF
