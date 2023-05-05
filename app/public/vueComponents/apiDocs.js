@@ -204,7 +204,7 @@ export const ApiDocs = {
                         <code>GET {{apiExample}}</code> <i class="bi bi-chevron-expand"></i>
                     </button>
                     <div class="collapse" :id="apiExample">
-                        <pre>
+                        <pre v-if="apiResponseExample">
                             <code>
                                 {{apiResponseExample}}
                             </code>
@@ -218,7 +218,10 @@ export const ApiDocs = {
     `,
     methods : {
         fetchResponse: async function(url) {
-            this.apiResponseExample = {};
+            this.apiResponseExample = '';
+            
+            let apiRequest = fetch(url).then(res => res.json());
+
             const collapseElements = document.querySelectorAll('.collapse');
 
             for(let element of collapseElements) {
@@ -226,7 +229,7 @@ export const ApiDocs = {
                 element.classList.remove('show');
             }
 
-            this.apiResponseExample = (await(await fetch(url)).json());
+            this.apiResponseExample = await (Promise.resolve(apiRequest));
         }
     }
 }
