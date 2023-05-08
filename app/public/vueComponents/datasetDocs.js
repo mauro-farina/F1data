@@ -6,8 +6,8 @@ export const DatasetDocs = {
             <h1>Dataset</h1>
 
             <p>This Dataset contains Formula 1 data of seasons 2021, 2022 and the first four rounds of 2023.</p>
-            <p>The data has been scraped by publicly available PDFs  on the <a class="link-light" href="https://www.fia.com">FIA website</a>.</p>
-            <p>The csv files that compose the Dataset available for download <a class="link-light" href="/dataset">here</a></p>
+            <p>The data has been scraped by publicly available PDFs  on the <a class="link-light" target="_blank" href="https://www.fia.com">FIA website</a>.</p>
+            <p>The csv files that compose the Dataset available for download <a class="link-light" href="/#/datasetFolder">here</a></p>
 
             <div class="my-5">
                 <ul class="list-group">
