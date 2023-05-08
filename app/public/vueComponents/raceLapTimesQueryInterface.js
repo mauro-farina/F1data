@@ -96,6 +96,8 @@ export const RaceLapTimesQueryInterface = {
                 this.lapTimes = [];
                 if(apiURL.includes('driver/')) {
                     for(let _lap of resultJson.lap_times) {
+                        if(this.lapLapNum !== "" && _lap.lap != this.lapLapNum) 
+                            continue;
                         this.lapTimes.push({
                             lap : _lap.lap,
                             times : [{
