@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require('fs');
 
-const DATASET_DIRECTORY = __dirname + '/../data/';
+const DATASET_DIRECTORY = __dirname + '/../../f1data/';
 
 router.get('/dataset', async (req, res) => {
     try {
