@@ -1,7 +1,7 @@
 FROM node:latest
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY app/package*.json ./
+COPY app/package.json ./
 RUN npm install
 COPY ./app /usr/src/app
 RUN mkdir -p /usr/src/f1data
