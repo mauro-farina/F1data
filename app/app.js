@@ -24,13 +24,34 @@ app.listen(process.env.PORT, async () => {
 
 const DATASET_DIRECTORY = __dirname + '/data/';
 
+app.get('/api/dataset', async (req, res) => {
+    try {
+        let files = await fs.promises.readdir(DATASET_DIRECTORY);
+        let response = [];
+        for(let file of files) {
+            let fileInfo = await fs.promises.stat(DATASET_DIRECTORY + file);
+            response.push({
+                filename : file,
+                size_in_byte : fileInfo.size,
+                last_modified : fileInfo.mtime
+            });
+        }
+        res.send(response);
+    } catch(err) {
+        console.error(err);
+        res.status(500).send('Error while reading a file.');
+        return;
+    }
+});
+
+
 app.get('/dataset/:filename', async (req, res) => {
     const filePath = DATASET_DIRECTORY + req.params.filename + '.csv';
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error while reading file');
+            res.status(500).send('File not found.');
             return;
         }
         res.set('Content-Type', 'text/csv');
