@@ -235,8 +235,6 @@ export const ApiDocs = {
         fetchResponse: async function(url) {
             this.apiResponseExample = '';
 
-            
-            
             let apiRequest = fetch(url).then(res => {
                 if(url !== '/api/dataset/drivers.csv')
                     return res.json();
