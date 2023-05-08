@@ -74,10 +74,10 @@
         </nav>
 
         <api-docs v-if="currentPath.includes('api')"></api-docs>
-        <dataset-docs v-if="currentPath.includes('dataset')"></dataset-docs>
+        <dataset-docs v-if="currentPath.includes('datasetDocs')"></dataset-docs>
         <database-query-interface v-if="currentPath.includes('dbQueryInterface')"></database-query-interface>
         <championship-battle-chart v-if="currentPath.includes('championshipBattle')"></championship-battle-chart>
-
+        <dataset-folder v-if="currentPath.includes('datasetFolder')"></dataset-folder>
     </main>
 </body>
 
