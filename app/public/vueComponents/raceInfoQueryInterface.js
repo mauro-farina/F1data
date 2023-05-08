@@ -14,8 +14,8 @@ export const RaceInfoQueryInterface = {
     },
     template : `
         <article>
-            <div class="input-group mb-3">
-                <div class="form-floating mb-3">
+            <div class="input-group mb-4">
+                <div class="form-floating">
                     <select class="form-select bg-dark" id="floatingYear" v-model="raceYear">
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -24,14 +24,14 @@ export const RaceInfoQueryInterface = {
                     <label for="floatingYear">Year</label>
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class="form-floating">
                     <select class="form-select bg-dark" id="floatingYear" v-model="raceRound">
                         <option v-for="r of roundsOfYear" :value="r">{{r}}</option>
                     </select>
                     <label for="floatingYear">Round</label>
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class="form-floating">
                     <select class="form-select bg-dark" id="floatingInfoType" v-model="raceInfo">
                         <option value="">Overview</option>
                         <!--<option value="race_grid">Race Grid</option>-->
@@ -43,8 +43,8 @@ export const RaceInfoQueryInterface = {
                     <label for="floatingInfoType">Information</label>
                 </div>
 
-                <button class="btn btn-outline-secondary" type="button" @click.prevent="sendRaceQuery">
-                    <i class="bi bi-search mx-1 mx-sm-2"></i>
+                <button class="btn btn-outline-secondary btn-lg" type="button" @click.prevent="sendRaceQuery">
+                    <i class="bi bi-search"></i>
                 </button>
             </div>
 
