@@ -60,6 +60,11 @@ export const DatasetDocs = {
                         <td>String</td>
                     </tr>
                     <tr>
+                        <td>void</td>
+                        <td>A dummy field required by MongoDB Compass</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">constructors.csv</td>
                     </tr>
                     <tr>
@@ -86,6 +91,11 @@ export const DatasetDocs = {
                         <td>url</td>
                         <td>URL to constructor's wikipedia page</td>
                         <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>void</td>
+                        <td>A dummy field required by MongoDB Compass</td>
+                        <td>---</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">circuits.csv</td>
@@ -121,6 +131,11 @@ export const DatasetDocs = {
                         <td>String</td>
                     </tr>
                     <tr>
+                        <td>void</td>
+                        <td>A dummy field required by MongoDB Compass</td>
+                        <td>---</td>
+                    </tr>
+                    <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">races.csv</td>
                     </tr>
                     <tr>
@@ -152,6 +167,11 @@ export const DatasetDocs = {
                         <td>url</td>
                         <td>URL to official F1 page about the race</td>
                         <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>void</td>
+                        <td>A dummy field required by MongoDB Compass</td>
+                        <td>---</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">sprint_results.csv</td>
