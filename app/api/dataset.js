@@ -9,8 +9,12 @@ router.get('/dataset', async (req, res) => {
     try {
         let files = await fs.promises.readdir(DATASET_DIRECTORY);
         let response = [];
+        let latestLastModified = new Date(1970, 01, 01);
         for(let file of files) {
             let fileInfo = await fs.promises.stat(DATASET_DIRECTORY + file);
+            if (fileInfo.mtime > latestLastModified || latestLastModified === '') {
+                latestLastModified = fileInfo.mtime;
+            }
             response.push({
                 filename : file,
                 size_in_byte : fileInfo.size,
@@ -21,6 +25,7 @@ router.get('/dataset', async (req, res) => {
         res.set('dc.creator', 'Mauro Farina');
         res.set('dc.subject', 'F1, Formula 1, Formula One, Motorsport, csv, api, dataset');
         res.set('dc.description', 'A dataset containing information about the latest seasons of Formula 1');
+        res.set('dc.date', latestLastModified.toISOString());
         res.set('dc.type', 'json');
         res.set('dc.format', 'application/json');
         res.set('dc.identifier', DOMAIN + '/api/dataset');
@@ -37,8 +42,16 @@ router.get('/dataset', async (req, res) => {
 
 router.get('/dataset/:filename', async (req, res) => {
     const filePath = DATASET_DIRECTORY + req.params.filename;
-    fs.readFile(filePath, 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', async (err, data) => {
         if (err) {
+            console.error(err);
+            res.status(500).send('File not found.');
+            return;
+        }
+        let mtime = new Date();
+        try {
+            mtime = (await fs.promises.stat(filePath)).mtime;
+        } catch(err) {
             console.error(err);
             res.status(500).send('File not found.');
             return;
@@ -47,6 +60,7 @@ router.get('/dataset/:filename', async (req, res) => {
         res.set('dc.creator', 'Mauro Farina');
         res.set('dc.subject', 'F1, Formula 1, Motorsport, csv, api, dataset');
         res.set('dc.description', 'A dataset containing information about the latest seasons of Formula 1');
+        res.set('dc.date', mtime.toISOString());
         res.set('dc.type', 'csv');
         res.set('dc.format', 'text/csv');
         res.set('dc.identifier', DOMAIN + '/api/dataset/' + req.params.filename);
