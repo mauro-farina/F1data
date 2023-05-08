@@ -10,9 +10,9 @@ const datasetAPI = require("./api/dataset.js");
 const oldRaceAPI = require("./api/api-race-unoptimized.js");
 const oldGeneralAPI = require("./api/api-general-unoptimized.js");
 
+app.use("/api", datasetAPI);
 app.use("/api", generalAPI);
 app.use("/api", raceAPI);
-app.use("/api", datasetAPI);
 app.use("/oldapi", oldGeneralAPI);
 app.use("/oldapi", oldRaceAPI);
 
