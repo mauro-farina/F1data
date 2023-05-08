@@ -57,65 +57,6 @@ router.get('/:year/:round', async (req, res) => {
     }
 });
 
-/*
-router.get('/:year/:round/race_results', async (req, res) => {
-    const db = mongo.getDB();
-    try {
-
-        const pipeline = [
-            {
-                $match: {
-                    year: parseInt(req.params.year),
-                    round: parseInt(req.params.round)
-                }
-            },
-            {
-                $lookup: {
-                    from: 'drivers',
-                    localField: 'driver_id',
-                    foreignField: 'driver_id',
-                    as: 'driver'
-                }
-            },
-            { $unwind: '$driver' },
-            {
-                $lookup: {
-                    from: 'constructors',
-                    localField: 'constructor_id',
-                    foreignField: 'constructor_id',
-                    as: 'constructor'
-                }
-            },
-            { $unwind: '$constructor' },
-            {
-                $project: {
-                    _id: 0,
-                    finish_position: 1,
-                    driver_id: '$driver.driver_id',
-                    driver_name: '$driver.driver_name',
-                    constructor_name: '$constructor.constructor_name',
-                    constructor_id: '$constructor.constructor_id',
-                    finish_status: 1,
-                    grid_position: '$grid.grid_position'
-                }
-            }
-        ];
-
-        const raceResults = await db.collection('race_results').aggregate(pipeline).toArray();
-
-        const singleRaceInfo = {
-            year: parseInt(req.params.year),
-            round: parseInt(req.params.round),
-            results: raceResults
-        };
-
-        res.send(singleRaceInfo);
-    } catch (err) {
-        console.error(`Something went wrong: ${err}`);
-        return res.status(500).json({ error: 'Server error' });
-    }
-});
-*/
 
 router.get('/:year/:round/race_results', async (req, res) => {
     const db = mongo.getDB();
