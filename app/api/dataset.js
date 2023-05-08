@@ -27,12 +27,14 @@ router.get('/dataset', async (req, res) => {
 
 router.get('/dataset/:filename', async (req, res) => {
     const filePath = DATASET_DIRECTORY + req.params.filename;
+    console.log(`requested file ${filePath}`);
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             res.status(500).send('File not found.');
             return;
         }
+        console.log(data);
         res.set('Content-Type', 'text/csv');
         res.send(data);
     });
