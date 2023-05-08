@@ -6,8 +6,7 @@ export const DatasetFolder = {
     },
     template: `
     <div class="container my-3">
-        <p><a class="link-light" href="/#/datasetDocs">Go back to the website</a></p> 
-        <p>Click on a link to download the respective csv file</p>
+        <p>Click on a link to download the respective <em>csv</em> file</p>
         <table class="table">
             <thead>
                 <th>Filename</th>
@@ -35,8 +34,9 @@ export const DatasetFolder = {
     },
     methods: {
         convertDate: function(fullDate) {
-            let dateSplit = fullDate.split('T');
-            let reformatDate = dateSplit[0].split('-')[2] + "/" + dateSplit[0].split('-')[1] + "/" + dateSplit[0].split('-')[0];
+            const dateSplit = fullDate.split('T');
+            const dateYYYYMMDD = dateSplit[0].split('-');
+            let reformatDate = dateYYYYMMDD[2] + "/" + dateYYYYMMDD[1] + "/" + dateYYYYMMDD[0];
             let reformatTime = dateSplit[1].split('.')[0] + " GMT";
             return reformatDate + " " + reformatTime;
         },
