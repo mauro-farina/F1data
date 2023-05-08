@@ -42,6 +42,8 @@ router.get('/:year/:round', async (req, res) => {
                     year: 1,
                     round: 1,
                     race_date: 1,
+                    gp_name: 1,
+                    url: 1,
                     country: '$circuit.country',
                     city: '$circuit.city',
                     circuit_id: '$circuit.circuit_id',
@@ -61,7 +63,6 @@ router.get('/:year/:round', async (req, res) => {
 router.get('/:year/:round/race_results', async (req, res) => {
     const db = mongo.getDB();
     try {
-
         const pipeline = [
             {
                 $match: {
