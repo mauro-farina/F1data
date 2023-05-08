@@ -15,11 +15,6 @@ const app = createApp({
             currentPath: window.location.hash,
         };
     },
-    computed: {
-        currentView: function () {
-            return this.currentPath.substring(1, this.currentPath.length);
-        }
-    },
     mounted: async function () {
         window.addEventListener('hashchange', () => {
             this.currentPath = window.location.hash;
