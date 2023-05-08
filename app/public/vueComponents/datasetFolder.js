@@ -19,8 +19,8 @@ export const DatasetFolder = {
                     <td>
                         <a class="text-dark-emphasis" href="'/dataset/'.concat(file.filename)">{{file.filename}}</a>
                     </td>
-                    <td>{{file.size_in_byte}} bytes</td>
-                    <td>{{file.last_modified}}</td>
+                    <td>{{byteToKB(file.size_in_byte)}}</td>
+                    <td>{{convertDate(file.last_modified)}}</td>
                 </tr>
             </tbody>
         </table>
@@ -31,6 +31,21 @@ export const DatasetFolder = {
             this.datasetFiles = await (await fetch('/api/dataset')).json();
         } catch(err) {
             // ...
+        }
+    },
+    methods: {
+        convertDate: function(fullDate) {
+            let dateSplit = fullDate.split('T');
+            let reformatDate = dateSplit[0].split('-')[2] + "/" + dateSplit[0].split('-')[1] + "/" + dateSplit[0].split('-')[0];
+            let reformatTime = dateSplit[1].split('.')[0] + " GMT";
+            return reformatDate + " " + reformatTime;
+        },
+        byteToKB: function(sizeB) {
+            if (sizeB < 1024 * 1024) {
+                return Math.round((sizeB / 1024) * 10) / 10 + " KB";
+            } else {
+                return Math.round((sizeB / (1024 * 1024)) * 10) / 10 + " MB";
+            }
         }
     }
 }
