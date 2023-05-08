@@ -142,7 +142,9 @@ router.get('/races', async (req, res) => {
                     _id: 0,
                     year: 1,
                     round: 1,
+                    gp_name: 1,
                     race_date: 1,
+                    url: 1,
                     country: '$circuit.country',
                     city: '$circuit.city',
                     circuit_id: 1,
@@ -195,10 +197,12 @@ router.get('/:year/races', async (req, res) => {
                     year: year,
                     round: "$round",
                     race_date: "$race_date",
+                    gp_name: "$gp_name",
                     country: "$circuit.country",
                     city: "$circuit.city",
                     circuit_id: "$circuit.circuit_id",
-                    circuit_name: "$circuit.circuit_name"
+                    circuit_name: "$circuit.circuit_name",
+                    url: "$url",
                 }
             }
         ]).toArray();
@@ -240,8 +244,9 @@ router.get('/:year/constructors', async (req, res) => {
                     _id: 0,
                     constructor_id: "$constructor.constructor_id",
                     constructor_name: "$constructor.constructor_name",
-                    nationality: "$constructor.nationality",
-                    main_office: "$constructor.main_office"
+                    country: "$constructor.country",
+                    main_office: "$constructor.main_office",
+                    url: "$constructor.url",
                 }
             }
         ]).toArray();
@@ -275,9 +280,10 @@ router.get('/:year/circuits', async (req, res) => {
                     city: { $first: "$circuit.city" },
                     circuit_name: { $first: "$circuit.circuit_name" },
                     length_in_km: { $first: "$circuit.length_in_km" },
+                    url: { $first: "$circuit.url" },
                 }
             },
-            { $project: { _id: 0, circuit_id: "$_id", country: 1, city: 1, circuit_name: 1, length_in_km: 1 } }
+            { $project: { _id: 0, circuit_id: "$_id", country: 1, city: 1, circuit_name: 1, length_in_km: 1, url: 1 } }
         ]).toArray();
 
         res.send(circuitsInfo);
