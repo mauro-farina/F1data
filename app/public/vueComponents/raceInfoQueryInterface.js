@@ -52,15 +52,19 @@ export const RaceInfoQueryInterface = {
                 <tr>
                     <th>Country</th>
                     <th>City</th>
+                    <th>Event</th>
                     <th>Circuit</th>
                     <th>Date</th>
+                    <th>F1 Website</th>
                 </tr>
                 <tr>
                     <td>{{raceOverview.country}}</td>
                     <td>{{raceOverview.city}}</td>
+                    <td>{{raceOverview.gp_name}}</td>
                     <td>{{raceOverview.circuit_name}}</td>
                     <td>{{raceOverview.race_date}}</td>
-                </tr>
+                    <td><a :href="raceOverview.url" class="link-light" target="_blank">{{raceOverview.url}}</a></td>
+                    </tr>
             </table>
 
             <table class="table table-dark table-hover" v-if="raceResults.length > 0">

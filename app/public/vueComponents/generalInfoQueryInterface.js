@@ -44,6 +44,7 @@ export const GeneralInfoQueryInterface = {
                         <th>Name</th>
                         <th>Country</th>
                         <th>DoB</th>
+                        <th>Wikipedia</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,6 +52,7 @@ export const GeneralInfoQueryInterface = {
                         <td>{{d.driver_name}}</td>
                         <td>{{d.country}}</td>
                         <td>{{d.date_of_birth}}</td>
+                        <td><a :href="d.url" class="link-light" target="_blank">{{d.url}}</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -59,13 +61,17 @@ export const GeneralInfoQueryInterface = {
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Licensing Country</th>
                         <th>Office Location</th>
+                        <th>Wikipedia</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="c of generalConstructors">
                         <td>{{c.constructor_name}}</td>
+                        <td>{{c.country}}</td>
                         <td>{{c.main_office}}</td>
+                        <td><a :href="c.url" class="link-light" target="_blank">{{c.url}}</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -76,7 +82,8 @@ export const GeneralInfoQueryInterface = {
                         <th>Circuit</th>
                         <th>Country</th>
                         <th>City</th>
-                        <th>Length (km)</th>
+                        <th>Length</th>
+                        <th>Wikipedia</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,6 +92,7 @@ export const GeneralInfoQueryInterface = {
                         <td>{{c.country}}</td>
                         <td>{{c.city}}</td>
                         <td>{{c.length_in_km}}</td>
+                        <td><a :href="c.url" class="link-light" target="_blank">{{c.url}}</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -97,6 +105,7 @@ export const GeneralInfoQueryInterface = {
                         <th>Circuit</th>
                         <th>Country</th>
                         <th>City</th>
+                        <th>F1 Website</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -106,6 +115,7 @@ export const GeneralInfoQueryInterface = {
                         <td>{{r.circuit_name}}</td>
                         <td>{{r.country}}</td>
                         <td>{{r.city}}</td>
+                        <td><a :href="r.url" class="link-light" target="_blank">{{r.url}}</a></td>
                     </tr>
                 </tbody>
             </table>
