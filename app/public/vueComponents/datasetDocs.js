@@ -55,6 +55,11 @@ export const DatasetDocs = {
                         <td>String</td>
                     </tr>
                     <tr>
+                        <td>url</td>
+                        <td>URL to driver's wikipedia page</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">constructors.csv</td>
                     </tr>
                     <tr>
@@ -68,8 +73,18 @@ export const DatasetDocs = {
                         <td>String</td>
                     </tr>
                     <tr>
+                        <td>country</td>
+                        <td>Country that issues a FIA License to the constructor</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
                         <td>main_office</td>
                         <td>Location of the main office</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td>URL to constructor's wikipedia page</td>
                         <td>String</td>
                     </tr>
                     <tr>
@@ -101,6 +116,11 @@ export const DatasetDocs = {
                         <td>Number</td>
                     </tr>
                     <tr>
+                        <td>url</td>
+                        <td>URL to circuits's wikipedia page</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">races.csv</td>
                     </tr>
                     <tr>
@@ -119,8 +139,18 @@ export const DatasetDocs = {
                         <td>String</td>
                     </tr>
                     <tr>
+                        <td>gp_name</td>
+                        <td>Formal name of the event</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
                         <td>race_date</td>
                         <td>Date of the race</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td>URL to official F1 page about the race</td>
                         <td>String</td>
                     </tr>
                     <tr>
