@@ -22,7 +22,8 @@ export const ApiDocs = {
                 '/api/2021/14/race_lap_times/driver/daniel_ricciardo',
                 '/api/2021/14/driver_standings',
                 '/api/2021/14/constructor_standings',
-                
+                '/api/dataset',
+                '/api/dataset/drivers.csv'
             ],
             apiResponseExample : ''
         }
@@ -190,6 +191,20 @@ export const ApiDocs = {
                             <code>year</code> (F1 season), e.g. <code>GET /api/2022/4/constructor_standings</code>.
                             </td>
                         </tr>
+                        <tr>
+                            <td><code>GET</code></td>
+                            <td><code>/api/dataset</code></td>
+                            <td>Returns information about the csv files that compose the dataset.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>GET</code></td>
+                            <td><code>/api/dataset/:filename</code></td>
+                            <td>Returns the content of <code>filename</code>.
+                            If visited from a browser, automatically starts the download of the file.
+                            e.g. <code>GET /api/dataset/drivers.csv</code>.
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -219,8 +234,15 @@ export const ApiDocs = {
     methods : {
         fetchResponse: async function(url) {
             this.apiResponseExample = '';
+
             
-            let apiRequest = fetch(url).then(res => res.json());
+            
+            let apiRequest = fetch(url).then(res => {
+                if(url !== '/api/dataset/drivers.csv')
+                    return res.json();
+                else
+                    return res.text();
+            });
 
             const collapseElements = document.querySelectorAll('.collapse');
 
