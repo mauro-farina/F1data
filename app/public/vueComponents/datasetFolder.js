@@ -16,7 +16,7 @@ export const DatasetFolder = {
             <tbody>
                 <tr v-for="file of datasetFiles">
                     <td>
-                        <a class="text-dark-emphasis" href="'/dataset/'.concat(file.filename)">{{file.filename}}</a>
+                        <a class="text-dark-emphasis" :href="'/api/dataset/'.concat(file.filename)">{{file.filename}}</a>
                     </td>
                     <td>{{byteToKB(file.size_in_byte)}}</td>
                     <td>{{convertDate(file.last_modified)}}</td>
