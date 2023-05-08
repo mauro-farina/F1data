@@ -14,10 +14,10 @@ export const DatasetDocs = {
                     <li class="list-group-item fs-5 ps-5 text-light"><b>Dublin Core Metadata Element Set</b></li>
                     <li class="list-group-item"><b>Title</b> F1 Dataset</li>
                     <li class="list-group-item"><b>Creator</b> Mauro Farina</li>
-                    <li class="list-group-item"><b>Date</b> May 1st, 2023</li>
                     <li class="list-group-item"><b>Subject</b> "Formula One", "Formula 1", "F1", "Motorsport", "Dataset", "CSV", "API"</li>
+                    <li class="list-group-item"><b>Description</b> A dataset containing information about the latest seasons of Formula 1</li>
                     <li class="list-group-item"><b>Format</b> CSV (Comma Separated Values)</li>
-                    <li class="list-group-item"><b>Identifier</b> /dataset</li>
+                    <li class="list-group-item"><b>Identifier</b> https://f1-app-demo-a5kvrhkn4a-ew.a.run.app/api/dataset</li>
                     <li class="list-group-item"><b>License</b> CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)</li>
                 </ul>
             </div>
