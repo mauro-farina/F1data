@@ -7,7 +7,7 @@ export const DatasetFolder = {
     template: `
     <div class="container my-3">
         <p>Click on a link to download the respective <em>csv</em> file</p>
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <th>Filename</th>
                 <th>Size</th>

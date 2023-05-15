@@ -22,7 +22,7 @@ export const DatasetDocs = {
                 </ul>
             </div>
 
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Field</th>

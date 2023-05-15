@@ -34,7 +34,7 @@ export const ApiDocs = {
             <h1>REST API Documentation</h1>
 
             <div class="container mb-5"> <!-- API TABLE -->
-                <table class="table table-bordered">
+                <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>Method</th>
