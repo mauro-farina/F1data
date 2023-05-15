@@ -45,16 +45,16 @@ let extract_lap_times = async function() {
             let filename = DOCS_FOLDER + year + '_' + round_str + '_' + 'racehistorychart';
             lap_data.lap = 0;
     
-            let messyData = {};
+            let extracted_data = {};
             try {
-                messyData = await pdfExtract.extract(filename.concat('.pdf'), {});
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
             } catch (error) {
                 break;
             } 
             
-            for(let page_num in messyData.pages) {
+            for(let page_num in extracted_data.pages) {
             
-                const table = messyData.pages[page_num].content; // array
+                const table = extracted_data.pages[page_num].content; // array
                 
                 for(let line of table) {
                     if(line.str.trim() == "") {
@@ -85,6 +85,7 @@ const extract_standings = async function() {
     // year_round_standings.pdf
     const pdfExtract = new PDFExtract();
     
+    const driver_regex = /[A-Z]\.\s[A-Z]+/g;
     let position_in_championship = 0;
     let found_driver = false;
     let year = START_FROM_YEAR;
@@ -203,17 +204,18 @@ const extract_standings = async function() {
                 continue;
             }
             
-            let messyData = {};
+            let extracted_data = {};
             try {
-                messyData = await pdfExtract.extract(filename.concat('.pdf'), {});
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
             } catch (error) {
                 break;
             }
     
             position_in_championship = 0;
             
+            // Drivers
             for(let page_num = 1; page_num <= 2; page_num++) {
-                for(let text of messyData.pages[page_num].content) {
+                for(let text of extracted_data.pages[page_num].content) {
                     if(text.str.trim().length == 0) {
                         continue;
                     }
@@ -221,7 +223,6 @@ const extract_standings = async function() {
                         csv_drivers = csv_drivers.concat(text.str); // points
                         found_driver = false;
                     }
-                    const driver_regex = /[A-Z]\.\s[A-Z]+/g;
                     if(text.str.match(driver_regex)) {
                         position_in_championship++;
                         csv_drivers = csv_drivers.concat('\n', year, ',', round, ',', position_in_championship, ',', standing_driver_name_to_driver_id(text.str), ',');
@@ -234,7 +235,7 @@ const extract_standings = async function() {
             position_in_championship = 0;
     
             // constructors
-            for(let text of messyData.pages[3].content) {
+            for(let text of extracted_data.pages[3].content) {
                 if(text.str.trim().length == 0) {
                     continue;
                 }
@@ -262,7 +263,7 @@ const extract_standings = async function() {
 const extract_race_results = async function() {
     // year_round_raceresults.pdf
     const driver_regex = /^[A-Z][a-z]+ [A-Z]+ ?[A-Z]+?( \*)?$/g;
-    const china_driver_regex = /^[A-Z]+ [A-Z][a-z]+( \*)?$/g;
+    const chinese_driver_regex = /^[A-Z]+ [A-Z][a-z]+( \*)?$/g;
     const pdfExtract = new PDFExtract();
     let year = START_FROM_YEAR;
 
@@ -283,14 +284,14 @@ const extract_race_results = async function() {
             race_data.round = round;
             race_data.finish_position = 0;
     
-            let messyData = {};
+            let extracted_data = {};
             try {
-                messyData = await pdfExtract.extract(filename.concat('.pdf'), {});
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
             } catch (error) {
                 break;
             }
             
-            const table = messyData.pages[1].content; // array
+            const table = extracted_data.pages[1].content; // array
             let default_finish_status = 'Finish'
     
             let first = true;
@@ -313,7 +314,7 @@ const extract_race_results = async function() {
                     race_data.finish_status = line.str.trim();
                 }
     
-                if(line.str.match(driver_regex) || line.str.match(china_driver_regex)) {
+                if(line.str.match(driver_regex) || line.str.match(chinese_driver_regex)) {
                     if(first) {
                         first = false;
                     } else {
@@ -348,7 +349,7 @@ const extract_race_results = async function() {
 const extract_sprint_results = async function() {
     // year_round_raceresults.pdf
     const driver_regex = /^[A-Z][a-z]+ [A-Z]+ ?[A-Z]+?( \*)?$/g;
-    const china_driver_regex = /^[A-Z]+ [A-Z][a-z]+( \*)?$/g;
+    const chinese_driver_regex = /^[A-Z]+ [A-Z][a-z]+( \*)?$/g;
     const pdfExtract = new PDFExtract();
     let year = START_FROM_YEAR;
 
@@ -369,14 +370,14 @@ const extract_sprint_results = async function() {
             race_data.round = round;
             race_data.finish_position = 0;
     
-            let messyData = {};
+            let extracted_data = {};
             try {
-                messyData = await pdfExtract.extract(filename.concat('.pdf'), {});
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
             } catch (error) {
                 continue;
             }
             
-            const table = messyData.pages[1].content; // array
+            const table = extracted_data.pages[1].content; // array
             let default_finish_status = 'Finish'
     
             let first = true;
@@ -399,7 +400,7 @@ const extract_sprint_results = async function() {
                     race_data.finish_status = line.str.trim();
                 }
     
-                if(line.str.match(driver_regex) || line.str.match(china_driver_regex)) {
+                if(line.str.match(driver_regex) || line.str.match(chinese_driver_regex)) {
                     if(first) {
                         first = false;
                     } else {
@@ -490,14 +491,14 @@ const extract_grid = async function() {
             let round_str = round < 10 ? '0'.concat(round) : round;
             let filename = DOCS_FOLDER + year + '_' + round_str + '_' + 'grid';
     
-            let messyData = {};
+            let extracted_data = {};
             try {
-                messyData = await pdfExtract.extract(filename.concat('.pdf'), {});
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
             } catch (error) {
                 break;
             }
             
-            const table = messyData.pages[1].content;
+            const table = extracted_data.pages[1].content;
             let acc = [];
             let pitLaneStarts = false;
 
