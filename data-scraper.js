@@ -54,21 +54,22 @@ let extract_lap_times = async function() {
             
             for(let page_num in extracted_data.pages) {
             
-                const table = extracted_data.pages[page_num].content; // array
+                const extracted_data_content = extracted_data.pages[page_num].content; // array
                 
-                for(let line of table) {
-                    if(line.str.trim() == "") {
+                for(let line of extracted_data_content) {
+                    if(line.str.trim() == "") 
                         continue;
-                    }
-                    if(line.str.match(/LAP\s\d+/g)) { // lap
+                    
+                    if(line.str.match(/LAP\s\d+/g)) // lap number
                         lap_data.lap++;
-                    }
-                    if(line.str.length <= 2) { // car_number -> driver_id
+                    
+                    if(line.str.length <= 2) // car_number -> driver_id
                         lap_data.driver_id = car_number_to_driver_id(line.str);
-                    }
+                    
                     if(line.str.length === 8 && line.str.includes(':')) { // lap_time
                         lap_data.lap_time = line.str;
-                        const lap_data_csv = lap_data.lap + "," + lap_data.driver_id + ',' + lap_data.lap_time;
+                        const lap_data_csv = lap_data.lap + "," + lap_data.driver_id 
+                            + ',' + lap_data.lap_time;
                         csv = csv.concat('\n', year, ',', round, ',', lap_data_csv);
                     }
                 }
@@ -291,12 +292,12 @@ const extract_race_results = async function() {
                 break;
             }
             
-            const table = extracted_data.pages[1].content; // array
+            const extracted_data_content = extracted_data.pages[1].content; // array
             let default_finish_status = 'Finish'
     
             let first = true;
             
-            for(let line of table) {
+            for(let line of extracted_data_content) {
                 if(line.str.trim() == "") {
                     continue;
                 }
@@ -377,12 +378,12 @@ const extract_sprint_results = async function() {
                 continue;
             }
             
-            const table = extracted_data.pages[1].content; // array
+            const extracted_data_content = extracted_data.pages[1].content; // array
             let default_finish_status = 'Finish'
     
             let first = true;
             
-            for(let line of table) {
+            for(let line of extracted_data_content) {
                 if(line.str.trim() == "") {
                     continue;
                 }
@@ -498,14 +499,13 @@ const extract_grid = async function() {
                 break;
             }
             
-            const table = extracted_data.pages[1].content;
+            const extracted_data_content = extracted_data.pages[1].content;
             let acc = [];
             let pitLaneStarts = false;
 
-            for(let line of table) {
-                if(pitLaneStarts && line.str.trim().match(time_regex) && acc.length === 0) {
+            for(let line of extracted_data_content) {
+                if(pitLaneStarts && line.str.trim().match(time_regex) && acc.length === 0)
                     continue;
-                }
                 if(pitLaneStarts && line.str.trim().match(time_regex)) {
                     acc[1] = acc[1].toLowerCase().replace(' *', '').replace('*', '').replace(/ /g, '_');
                     csv = csv.concat(`${year},${round},PIT LANE,${acc[1]},N/A\n`);
