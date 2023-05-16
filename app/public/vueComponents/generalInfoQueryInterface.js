@@ -14,7 +14,7 @@ export const GeneralInfoQueryInterface = {
             <div class="input-group mb-4">
                 <div class="form-floating">
                     <select class="form-select bg-dark" id="floatingYear" v-model="generalYear">
-                        <option value="any">Any</option>
+                        <option value="">Any</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
@@ -100,6 +100,7 @@ export const GeneralInfoQueryInterface = {
             <table class="table table-dark table-hover" v-if="generalRaces.length > 0">
                 <thead>
                     <tr>
+                        <th v-if="generalYear === ''">Year</th>
                         <th>Round</th>
                         <th>Race Date</th>
                         <th>Circuit</th>
@@ -110,6 +111,7 @@ export const GeneralInfoQueryInterface = {
                 </thead>
                 <tbody>
                     <tr v-for="r of generalRaces">
+                        <td v-if="generalYear === ''">{{r.year}}</td>
                         <td>{{r.round}}</td>
                         <td>{{r.race_date}}</td>
                         <td>{{r.circuit_name}}</td>
@@ -123,7 +125,7 @@ export const GeneralInfoQueryInterface = {
     `,
     methods : {
         sendGeneralQuery: async function() {
-            let apiURL = '/api/'.concat((this.generalYear === "any" ? "" : `${this.generalYear}/`)).concat(this.generalInfo);
+            let apiURL = '/api/'.concat((this.generalYear === "" ? "" : `${this.generalYear}/`)).concat(this.generalInfo);
             try {
                 let resultResponse = await fetch(apiURL);
                 if(resultResponse.status !== 200) throw new Error();
@@ -144,6 +146,13 @@ export const GeneralInfoQueryInterface = {
             this.generalConstructors = [];
             this.generalCircuits = [];
             this.generalRaces = [];
+        }
+    },
+    watch: {
+        generalYear: function (newVal, oldVal) {
+            if(this.generalInfo !== '') {
+                this.sendGeneralQuery();
+            }
         }
     }
 }
