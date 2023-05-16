@@ -24,6 +24,9 @@ router.get('/drivers', async (req, res) => {
     const db = mongo.getDB();
     try {
         const options = {
+            sort: {
+                driver_name: 1
+            },
             projection: {
                 _id: 0
             }
@@ -137,6 +140,9 @@ router.get('/races', async (req, res) => {
             {
                 $unwind: '$circuit'
             },
+            { 
+                $sort: { year: 1, round: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -164,9 +170,17 @@ router.get('/races', async (req, res) => {
 router.get('/:year/drivers', async (req, res) => {
     const db = mongo.getDB();
     try {
+        const options = {
+            sort: {
+                driver_name: 1
+            },
+            projection: {
+                _id: 0
+            }
+        }
         const year = parseInt(req.params.year);
         const driverIds = await db.collection("driver_standings").distinct('driver_id', { year });
-        const driversInfo = await db.collection("drivers").find({ driver_id: { $in: driverIds } }, { projection: { _id: 0 } }).toArray();
+        const driversInfo = await db.collection("drivers").find({ driver_id: { $in: driverIds } }, options).toArray();
         res.send(driversInfo);
     } catch (err) {
         console.error(`Something went wrong: ${err}`);
@@ -191,6 +205,9 @@ router.get('/:year/races', async (req, res) => {
                 }
             },
             { $unwind: "$circuit" },
+            { 
+                $sort: { round: 1 } 
+            },
             {
                 $project: {
                     _id: 0,

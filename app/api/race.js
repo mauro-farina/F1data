@@ -36,6 +36,9 @@ router.get('/:year/:round', async (req, res) => {
             {
                 $unwind: '$circuit'
             },
+            { 
+                $sort: { fieldName: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -114,6 +117,9 @@ router.get('/:year/:round/race_results', async (req, res) => {
                 }
             },
             { $unwind: { path: '$grid', preserveNullAndEmptyArrays: true } },
+            { 
+                $sort: { finish_position: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -236,6 +242,9 @@ router.get('/:year/:round/race_lap_times/lap/:lap', async (req, res) => {
                     as: "driver"
                 }
             },
+            { 
+                $sort: { lap_time: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -288,6 +297,9 @@ router.get('/:year/:round/race_lap_times/driver/:driver', async (req, res) => {
             },
             {
                 $unwind: "$driver_info"
+            },
+            { 
+                $sort: { lap: 1 } 
             },
             {
                 $project: {
@@ -343,6 +355,9 @@ router.get('/:year/:round/sprint_results', async (req, res) => {
                 }
             },
             { $unwind: '$constructor' },
+            { 
+                $sort: { finish_position: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -393,6 +408,9 @@ router.get('/:year/:round/driver_standings', async (req, res) => {
             {
                 $unwind: '$driver'
             },
+            { 
+                $sort: { position: 1 } 
+            },
             {
                 $project: {
                     _id: 0,
@@ -437,6 +455,9 @@ router.get('/:year/:round/constructor_standings', async (req, res) => {
             },
             {
                 $unwind: '$constructor'
+            },
+            { 
+                $sort: { position: 1 } 
             },
             {
                 $project: {
