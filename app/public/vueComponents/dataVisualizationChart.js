@@ -37,7 +37,7 @@ export const DataVisualizationChart = {
     template : `
         <section class="container my-3">
 
-            <div class="form-floating col-sm-3 col-md-3 mb-3">
+            <div class="form-floating col-sm-4 col-md-4 mb-3">
                 <select class="form-select bg-dark" id="floatingChartSelection" v-model="selectedChart">
                     <option value="driversChampionshipChart">Drivers Championship</option>
                     <option value="constructorChampionshipChart">Constructors Championship</option>
