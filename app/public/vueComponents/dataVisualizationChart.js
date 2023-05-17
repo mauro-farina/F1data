@@ -7,31 +7,31 @@ export const DataVisualizationChart = {
             chartRound: '',
             numberRoundsOfYear: '',
             selectedChart: '',
-            CHART_COLORS: {
-                red: 'rgb(255, 99, 132)',
-                orange: 'rgb(255, 159, 64)',
-                yellow: 'rgb(255, 205, 86)',
-                green: 'rgb(75, 192, 192)',
-                blue: 'rgb(54, 162, 235)',
-                purple: 'rgb(153, 102, 255)',
-                grey: 'rgb(201, 203, 207)',
-                pink: 'rgb(255, 192, 203)',
-                teal: 'rgb(0, 128, 128)',
-                lime: 'rgb(0, 255, 0)',
-                cyan: 'rgb(0, 255, 255)',
-                indigo: 'rgb(75, 0, 130)',
-                magenta: 'rgb(255, 0, 255)',
-                gold: 'rgb(255, 215, 0)',
-                maroon: 'rgb(128, 0, 0)',
-                navy: 'rgb(0, 0, 128)',
-                olive: 'rgb(128, 128, 0)',
-                pink: 'rgb(255, 192, 203)',
-                salmon: 'rgb(250, 128, 114)',
-                sienna: 'rgb(160, 82, 45)',
-                skyBlue: 'rgb(135, 206, 235)',
-                tan: 'rgb(210, 180, 140)',
-                tomato: 'rgb(255, 99, 71)',
-            }
+            CHART_COLORS: [
+                'rgb(255, 99, 132)', //red
+                'rgb(255, 159, 64)', //orange
+                'rgb(255, 205, 86)', //yellow
+                'rgb(75, 192, 192)', //green
+                'rgb(54, 162, 235)', //blue
+                'rgb(153, 102, 255)', //purple
+                'rgb(201, 203, 207)', //grey
+                'rgb(255, 192, 203)', //pink
+                'rgb(0, 128, 128)', //teal
+                'rgb(0, 255, 0)', //lime
+                'rgb(0, 255, 255)', //cyan
+                'rgb(75, 0, 130)', //indigo
+                'rgb(255, 0, 255)', //magenta
+                'rgb(255, 215, 0)', //gold
+                'rgb(128, 0, 0)', //maroon
+                'rgb(0, 0, 128)', //navy
+                'rgb(128, 128, 0)', //olive
+                'rgb(255, 192, 203)', //pink
+                'rgb(250, 128, 114)', //salmon
+                'rgb(160, 82, 45)', //sienna
+                'rgb(135, 206, 235)', //skyBlue
+                'rgb(210, 180, 140)', //tan
+                'rgb(255, 99, 71)', //tomato
+            ]
         }
     },
     template : `
