@@ -74,11 +74,21 @@ export const RaceLapTimesQueryInterface = {
     watch: {
         raceYear: async function (newVal, oldVal) {
             this.roundsOfYear = (await (await fetch(`/api/${newVal}/races`)).json()).map(r => r.round);
+            if (this.raceRound !== '') {
+                this.sendRaceLapQuery();
+            }
         },
         raceRound: async function (newVal, oldVal) {
             let raceLapTimes = await (await fetch(`/api/${this.raceYear}/${newVal}/race_lap_times`)).json();
             this.raceLaps = raceLapTimes.lap_times.length;
             this.lapDriversList = raceLapTimes.lap_times[0].times.map(o => o.driver_id);
+            this.sendRaceLapQuery();
+        },
+        lapLapNum: function (newVal, oldVal) {
+            this.sendRaceLapQuery();
+        },
+        lapDriver: function (newVal, oldVal) {
+            this.sendRaceLapQuery();
         }
     },
     methods : {
