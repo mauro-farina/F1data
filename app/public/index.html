@@ -67,8 +67,8 @@
                                 href="#/dbQueryInterface"><i class="bi bi-file-spreadsheet-fill"></i> Query Interface</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" :class="{active : currentPath.includes('championshipBattleChart')}" 
-                            href="#/championshipBattleChart"><i class="bi bi-graph-up"></i> Championship Battle</a>
+                            <a class="nav-link" :class="{active : currentPath.includes('charts')}" 
+                            href="#/charts"><i class="bi bi-graph-up"></i> Charts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://github.com/mauro-farina/f1-app-demo" target="_blank">
@@ -83,7 +83,7 @@
         <api-docs v-if="currentPath.includes('api')"></api-docs>
         <dataset-docs v-if="currentPath.includes('datasetDocs')"></dataset-docs>
         <database-query-interface v-if="currentPath.includes('dbQueryInterface')"></database-query-interface>
-        <championship-battle-chart v-if="currentPath.includes('championshipBattle')"></championship-battle-chart>
+        <data-visualization-chart v-if="currentPath.includes('charts')"></data-visualization-chart>
         <dataset-folder v-if="currentPath.includes('datasetFolder')"></dataset-folder>
     </main>
 </body>

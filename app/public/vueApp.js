@@ -5,7 +5,7 @@ import {DatabaseQueryInterface} from './vueComponents/dbQueryInterface.js';
 import {GeneralInfoQueryInterface} from './vueComponents/generalInfoQueryInterface.js';
 import {RaceInfoQueryInterface} from './vueComponents/raceInfoQueryInterface.js';4
 import {RaceLapTimesQueryInterface} from './vueComponents/raceLapTimesQueryInterface.js';
-import {ChampionshipBattleChart} from './vueComponents/championshipBattle.js';
+import {DataVisualizationChart} from './vueComponents/dataVisualizationChart.js';
 
 const { createApp } = Vue;
 
@@ -29,7 +29,7 @@ app.component("DatabaseQueryInterface", DatabaseQueryInterface);
 app.component("GeneralInfoQueryInterface", GeneralInfoQueryInterface);
 app.component("RaceInfoQueryInterface", RaceInfoQueryInterface);
 app.component("RaceLapTimesQueryInterface", RaceLapTimesQueryInterface);
-app.component("ChampionshipBattleChart", ChampionshipBattleChart);
+app.component("DataVisualizationChart", DataVisualizationChart);
 
 
 app.mount("#app");

@@ -1,4 +1,4 @@
-export const ChampionshipBattleChart = {
+export const DataVisualizationChart = {
     data : function() {
         return {
             chartData : {},
