@@ -146,6 +146,20 @@ export const RaceInfoQueryInterface = {
     watch: {
         raceYear: async function (newVal, oldVal) {
             this.roundsOfYear = (await (await fetch(`/api/${newVal}/races`)).json()).map(r => r.round);
+            if (this.raceRound !== '') {
+                this.sendRaceQuery();
+            }
+        },
+        raceRound: function (newVal, oldVal) {
+            if (newVal.length === '') return;
+            if (this.raceYear === '') return;
+            this.sendRaceQuery();
+        },
+        raceInfo: function (newVal, oldVal) {
+            if (newVal.length === '') return;
+            if (this.raceYear === '') return;
+            if (this.raceRound === '') return;
+            this.sendRaceQuery();
         }
     },
     methods : {
