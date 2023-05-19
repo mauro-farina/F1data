@@ -204,7 +204,7 @@ export const DataVisualizationChart = {
             for (let race of races) {
                 standingsApiUrls.push(`/api/${this.chartYear}/${race.round}/${driverOrConstructor}_standings`);
             }
-            let fetchAllStandings = await this.fetchDriverStandings(standingsApiUrls);
+            let fetchAllStandings = await this.fetchStandings(standingsApiUrls);
             for(let singleStandings of fetchAllStandings) {
                 standings.push.apply(standings, singleStandings);
             }
@@ -270,7 +270,7 @@ export const DataVisualizationChart = {
             }
             return arr;
         },
-        fetchDriverStandings: async function (urls) {
+        fetchStandings: async function (urls) {
             const fetchPromises = urls.map(url => fetch(url).then(response => response.json()).then(res => res.driver_standings || res.constructor_standings));
             const results = await Promise.all(fetchPromises);
             return results;
