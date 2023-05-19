@@ -73,13 +73,13 @@ export const RaceLapTimesQueryInterface = {
     `,
     watch: {
         raceYear: async function (newVal, oldVal) {
-            this.roundsOfYear = (await (await fetch(`/api/${newVal}/races`)).json()).map(r => r.round);
+            this.roundsOfYear = (await (await fetch(`/api/races/${newVal}`)).json()).map(r => r.round);
             if (this.raceRound !== '') {
                 this.sendRaceLapQuery();
             }
         },
         raceRound: async function (newVal, oldVal) {
-            let raceLapTimes = await (await fetch(`/api/${this.raceYear}/${newVal}/race_lap_times`)).json();
+            let raceLapTimes = await (await fetch(`/api/races/${this.raceYear}/${newVal}/lap_times`)).json();
             this.raceLaps = raceLapTimes.lap_times.length;
             this.lapDriversList = raceLapTimes.lap_times[0].times.map(o => o.driver_id);
             this.sendRaceLapQuery();
@@ -93,7 +93,7 @@ export const RaceLapTimesQueryInterface = {
     },
     methods : {
         sendRaceLapQuery: async function() {
-            let apiURL = `/api/${this.raceYear}/${this.raceRound}/race_lap_times/`;
+            let apiURL = `/api/races/${this.raceYear}/${this.raceRound}/lap_times/`;
             if(this.lapDriver === "" && this.lapLapNum !== "") {
                 apiURL = apiURL.concat(`lap/${this.lapLapNum}`);
             } else if(this.lapDriver !== "") {

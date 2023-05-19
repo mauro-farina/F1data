@@ -125,7 +125,8 @@ export const GeneralInfoQueryInterface = {
     `,
     methods : {
         sendGeneralQuery: async function() {
-            let apiURL = '/api/'.concat((this.generalYear === "" ? "" : `${this.generalYear}/`)).concat(this.generalInfo);
+            let apiURL = `/api/${this.generalInfo}?year=${this.generalYear}`;
+
             try {
                 let resultResponse = await fetch(apiURL);
                 if(resultResponse.status !== 200) throw new Error();

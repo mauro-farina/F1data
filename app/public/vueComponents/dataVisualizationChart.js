@@ -85,12 +85,12 @@ export const DataVisualizationChart = {
                 if (newVal.length === 0)
                     return;
                 if (this.selectedChart.includes('driver')) {
-                    this.getChampionshipChartData('driver');
+                    this.getChampionshipChartData('drivers');
                 } else if (this.selectedChart.includes('constructor')) {
-                    this.getChampionshipChartData('constructor');
+                    this.getChampionshipChartData('constructors');
                 }
             } else {
-                this.numberRoundsOfYear = (await (await fetch(`/api/${newVal}/races`)).json()).length;
+                this.numberRoundsOfYear = (await (await fetch(`/api/races/${newVal}`)).json()).length;
                 this.chartRound = '';
             }
         },
@@ -184,9 +184,9 @@ export const DataVisualizationChart = {
                 options: chartOptions
             });
         },
-        getChampionshipChartData: async function(driverOrConstructor) {
-            let entriesQuery = await fetch(`/api/${this.chartYear}/${driverOrConstructor}s`);
-            let racesQuery = await fetch(`/api/${this.chartYear}/races`);
+        getChampionshipChartData: async function(driversOrConstructors) {
+            let entriesQuery = await fetch(`/api/${driversOrConstructors}?year=${this.chartYear}`);
+            let racesQuery = await fetch(`/api/races/${this.chartYear}`);
 
             if (entriesQuery.status !== 200
                 || racesQuery.status !== 200) {
@@ -202,7 +202,7 @@ export const DataVisualizationChart = {
 
             let standingsApiUrls = [];
             for (let race of races) {
-                standingsApiUrls.push(`/api/${this.chartYear}/${race.round}/${driverOrConstructor}_standings`);
+                standingsApiUrls.push(`/api/standings/${this.chartYear}/${race.round}/${driversOrConstructors}`);
             }
             let fetchAllStandings = await this.fetchStandings(standingsApiUrls);
             for(let singleStandings of fetchAllStandings) {
@@ -219,9 +219,9 @@ export const DataVisualizationChart = {
                     backgroundColor: this.CHART_COLORS[count],
                     hidden: Math.round(Math.random())
                 };
-                if (driverOrConstructor.includes('driver')) {
+                if (driversOrConstructors.includes('driver')) {
                     datasetElement.data = this.zeroPadArray(_.filter(standings, { driver_id: entry.driver_id }).map(s => s.points), numRaces)
-                } else if (driverOrConstructor.includes('constructor')) {
+                } else if (driversOrConstructors.includes('constructor')) {
                     datasetElement.data = this.zeroPadArray(_.filter(standings, { constructor_id: entry.constructor_id }).map(s => s.points), numRaces)
                 }
                 count++;
@@ -233,9 +233,9 @@ export const DataVisualizationChart = {
                 datasets: datasets
             };
         },
-        getLapTimesChartData: async function() {const lap_times = (await (await fetch(`/api/${this.chartYear}/${this.chartRound}/race_lap_times`)).json()).lap_times;
-
-            let drivers = (await (await fetch(`/api/${this.chartYear}/drivers`)).json());
+        getLapTimesChartData: async function() {
+            const lap_times = (await (await fetch(`/api/races/${this.chartYear}/${this.chartRound}/lap_times`)).json()).lap_times;
+            let drivers = (await (await fetch(`/api/drivers?year=${this.chartYear}`)).json());
 
             let count = 0;
             let datasets = [];
