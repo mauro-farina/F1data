@@ -145,6 +145,11 @@ router.get('/races', async (req, res) => {
     const db = mongo.getDB();
     try {
         const races = await db.collection('races').aggregate([
+            { 
+                $match: {
+                    year: req.query['year'] === undefined ? { $exists: true } : parseInt(req.query['year'])
+                }
+            },
             {
                 $lookup: {
                     from: 'circuits',
