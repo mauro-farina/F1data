@@ -1,8 +1,8 @@
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const fs = require('fs');
 
-const DOCS_FOLDER = 'scraped-data/f1docs/';
-const CSV_OUTPUT_FOLDER = 'scraped-data/f1csvs/';
+const DOCS_FOLDER = 'f1docs/';
+const CSV_OUTPUT_FOLDER = 'f1-app-demo/f1data/';
 const START_FROM_YEAR = 2021;
 const UP_TO_YEAR = 2023;
 
@@ -514,7 +514,7 @@ const extract_grid = async function() {
                 }
 
                 if (line.str.includes('NOTES') || line.str.includes('PENALTIES') 
-                    || line.str.includes('FORMULA 1') || line.str.includes('Doc 29')) break;
+                    || line.str.includes('FORMULA 1') || line.str.match(/Doc \d{2}/)) break;
 
                 if (line.str.trim() == "" && (acc.length !== 4 || year === 2023)) continue;
                 if (line.str.trim().match(/^[0-9][0-9]?$/) && acc.length === 4) {
