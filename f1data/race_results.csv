@@ -957,3 +957,23 @@ year,round,finish_position,driver_id,constructor_id,finish_status
 2023,4,18,valtteri_bottas,alfa_romeo,1 LAP
 2023,4,N/C,zhou_guanyu,alfa_romeo,DNF
 2023,4,N/C,nyck_de_vries,alphatauri,DNF
+2023,5,1,max_verstappen,red_bull,Finish
+2023,5,2,sergio_perez,red_bull,Finish
+2023,5,3,fernando_alonso,aston_martin,Finish
+2023,5,4,george_russell,mercedes,Finish
+2023,5,5,carlos_sainz,ferrari,Finish
+2023,5,6,lewis_hamilton,mercedes,Finish
+2023,5,7,charles_leclerc,ferrari,Finish
+2023,5,8,pierre_gasly,alpine,Finish
+2023,5,9,esteban_ocon,alpine,Finish
+2023,5,10,kevin_magnussen,haas,Finish
+2023,5,11,yuki_tsunoda,alphatauri,Finish
+2023,5,12,lance_stroll,aston_martin,Finish
+2023,5,13,valtteri_bottas,alfa_romeo,Finish
+2023,5,14,alexander_albon,williams,Finish
+2023,5,15,nico_hulkenberg,haas,Finish
+2023,5,16,zhou_guanyu,alfa_romeo,Finish
+2023,5,17,lando_norris,mclaren,Finish
+2023,5,18,nyck_de_vries,alphatauri,Finish
+2023,5,19,oscar_piastri,mclaren,1 LAP
+2023,5,20,logan_sargeant,williams,1 LAP

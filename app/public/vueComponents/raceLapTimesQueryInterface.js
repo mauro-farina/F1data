@@ -58,6 +58,7 @@ export const RaceLapTimesQueryInterface = {
                         <th>Lap</th>
                         <th>Driver</th>
                         <th>Time</th>
+                        <th>Gap to leader</th>
                     </tr>
                 </thead>
                 <tbody v-for="l in lapTimes">
@@ -65,6 +66,7 @@ export const RaceLapTimesQueryInterface = {
                         <td>{{l.lap}}</td>
                         <td>{{ld.driver_name}}</td>
                         <td>{{ld.lap_time}}</td>
+                        <td>{{ld.gap_to_leader}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -112,7 +114,8 @@ export const RaceLapTimesQueryInterface = {
                             lap : _lap.lap,
                             times : [{
                                 driver_name : resultJson.driver_name,
-                                lap_time : _lap.lap_time
+                                lap_time : _lap.lap_time,
+                                gap_to_leader : _lap.gap_to_leader
                             }]
                         });
                     }
