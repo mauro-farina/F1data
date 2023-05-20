@@ -19,7 +19,7 @@ async function write_to_csvfile(filename, csv_data) {
 let create_files = async function() {
     await write_to_csvfile("race_results", "year,round,finish_position,driver_id,constructor_id,finish_status");
     await write_to_csvfile("sprint_results", "year,round,finish_position,driver_id,constructor_id,finish_status");
-    await write_to_csvfile("lap_times", "year,round,lap,driver_id,lap_time");
+    await write_to_csvfile("lap_times", "year,round,lap,driver_id,lap_time,gap_to_leader");
     await write_to_csvfile("driver_standings", "year,round,position,driver_id,points");
     await write_to_csvfile("constructor_standings", "year,round,position,constructor_id,points");
     await write_to_csvfile("race_grid", "year,round,grid_position,driver_id,quali_time");
@@ -37,7 +37,8 @@ let extract_lap_times = async function() {
             round : 0,
             lap : 0,
             driver_id : '',
-            lap_time : "0"
+            lap_time : "0",
+            gap_to_leader : "0"
         };
 
         for(let round = 1; round <= 22; round++) {
@@ -55,21 +56,37 @@ let extract_lap_times = async function() {
             for(let page_num in extracted_data.pages) {
             
                 const extracted_data_content = extracted_data.pages[page_num].content; // array
+                let read_car_numb = false;
+                let read_leader = false;
                 
                 for(let line of extracted_data_content) {
                     if(line.str.trim() == "") 
                         continue;
                     
-                    if(line.str.match(/LAP\s\d+/g)) // lap number
+                    if(line.str.match(/LAP\s\d+/g)) { // lap number
                         lap_data.lap++;
+                        lap_data.gap_to_leader = "0";
+                        read_leader = true;
+                    }
+
+                    if (read_car_numb) {
+                        if (read_leader)
+                            lap_data.gap_to_leader = "0";
+                        else
+                            lap_data.gap_to_leader = line.str.trim();
+                        read_car_numb = false;
+                        read_leader = false;
+                    }
                     
-                    if(line.str.length <= 2) // car_number -> driver_id
+                    if(line.str.length <= 2) { // car_number -> driver_id
                         lap_data.driver_id = car_number_to_driver_id(line.str);
+                        read_car_numb = true;
+                    }
                     
                     if(line.str.length === 8 && line.str.includes(':')) { // lap_time
                         lap_data.lap_time = line.str;
                         const lap_data_csv = lap_data.lap + "," + lap_data.driver_id 
-                            + ',' + lap_data.lap_time;
+                            + ',' + lap_data.lap_time + ',' + lap_data.gap_to_leader;
                         csv = csv.concat('\n', year, ',', round, ',', lap_data_csv);
                     }
                 }
