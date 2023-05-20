@@ -1,4 +1,4 @@
-year,round,lap,driver_id,lap_time,gap_to_leader
+year,round,lap,driver_id,lap_time,gap_to_leader,void
 2021,1,1,max_verstappen,1:58.245,0.0
 2021,1,1,lewis_hamilton,1:59.538,1.293
 2021,1,1,charles_leclerc,2:02.698,4.453
