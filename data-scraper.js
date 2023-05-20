@@ -71,7 +71,7 @@ let extract_lap_times = async function() {
 
                     if (read_car_numb) {
                         if (read_leader)
-                            lap_data.gap_to_leader = "0";
+                            lap_data.gap_to_leader = "0.0";
                         else
                             lap_data.gap_to_leader = line.str.trim();
                         read_car_numb = false;
