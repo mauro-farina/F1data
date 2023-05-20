@@ -5,17 +5,60 @@ const mongo = require("../mongodb.js");
 
 // REST APIs
 /*
-GET /api/:year/:round                                   // race info
-GET /api/:year/:round/race_results                      // results of race
-GET /api/:year/:round/race_lap_times                    // lap times of race
-GET /api/:year/:round/race_lap_times/lap/:lap           // lap times of race-lap
-GET /api/:year/:round/race_lap_times/driver/:driver     // lap times of driver
-GET /api/:year/:round/sprint_results                    // results of sprint race
-GET /api/:year/:round/driver_standings                  // drivers standings after race
-GET /api/:year/:round/constructor_standings             // constructor standings after race
+GET /api/races/:year/                                       // races of the year
+GET /api/races/:year/:round                                 // race info
+GET /api/races/:year/:round/results                         // results of race
+GET /api/races/:year/:round/lap_times                       // lap times of race
+GET /api/races/:year/:round/lap_times/lap/:lap              // lap times of race-lap
+GET /api/races/:year/:round/lap_times/driver/:driver        // lap times of driver
+GET /api/sprint/:year/:round/results                        // results of sprint race
+GET /api/standings/:year/:round/drivers                     // drivers standings after race
+GET /api/standings/:year/:round/constructors                // constructor standings after race
 */
 
-router.get('/:year/:round', async (req, res) => {
+router.get('/races/:year', async (req, res) => {
+    const db = mongo.getDB();
+    try {
+        const year = parseInt(req.params.year);
+
+        const racesInfo = await db.collection("races").aggregate([
+            { $match: { year: year } },
+            {
+                $lookup: {
+                    from: "circuits",
+                    localField: "circuit_id",
+                    foreignField: "circuit_id",
+                    as: "circuit"
+                }
+            },
+            { $unwind: "$circuit" },
+            { 
+                $sort: { round: 1 } 
+            },
+            {
+                $project: {
+                    _id: 0,
+                    year: year,
+                    round: "$round",
+                    race_date: "$race_date",
+                    gp_name: "$gp_name",
+                    country: "$circuit.country",
+                    city: "$circuit.city",
+                    circuit_id: "$circuit.circuit_id",
+                    circuit_name: "$circuit.circuit_name",
+                    url: "$url",
+                }
+            }
+        ]).toArray();
+
+        res.send(racesInfo);
+    } catch (err) {
+        console.error(`Something went wrong: ${err}`);
+        return res.status(500).json({ error: "Server error" });
+    }
+});
+
+router.get('/races/:year/:round', async (req, res) => {
     const db = mongo.getDB();
     try {
         const pipeline = [
@@ -63,7 +106,7 @@ router.get('/:year/:round', async (req, res) => {
 });
 
 
-router.get('/:year/:round/race_results', async (req, res) => {
+router.get('/races/:year/:round/results', async (req, res) => {
     const db = mongo.getDB();
     try {
         const pipeline = [
@@ -150,7 +193,7 @@ router.get('/:year/:round/race_results', async (req, res) => {
     }
 });
 
-router.get('/:year/:round/race_lap_times', async (req, res) => {
+router.get('/races/:year/:round/lap_times', async (req, res) => {
     const db = mongo.getDB();
 
     try {
@@ -215,7 +258,7 @@ router.get('/:year/:round/race_lap_times', async (req, res) => {
 });
 
 
-router.get('/:year/:round/race_lap_times/lap/:lap', async (req, res) => {
+router.get('/races/:year/:round/lap_times/lap/:lap', async (req, res) => {
     const db = mongo.getDB();
     try {
         const raceQuery = { year: parseInt(req.params.year), round: parseInt(req.params.round) };
@@ -272,7 +315,7 @@ router.get('/:year/:round/race_lap_times/lap/:lap', async (req, res) => {
 });
 
 
-router.get('/:year/:round/race_lap_times/driver/:driver', async (req, res) => {
+router.get('/races/:year/:round/lap_times/driver/:driver', async (req, res) => {
     const db = mongo.getDB();
     try {
         const year = parseInt(req.params.year);
@@ -326,7 +369,7 @@ router.get('/:year/:round/race_lap_times/driver/:driver', async (req, res) => {
 });
 
 
-router.get('/:year/:round/sprint_results', async (req, res) => {
+router.get('/sprint/:year/:round/results', async (req, res) => {
     const db = mongo.getDB();
     try {
 
@@ -387,7 +430,7 @@ router.get('/:year/:round/sprint_results', async (req, res) => {
 });
 
 
-router.get('/:year/:round/driver_standings', async (req, res) => {
+router.get('/standings/:year/:round/drivers', async (req, res) => {
     const db = mongo.getDB();
     try {
         const pipeline = [
@@ -435,7 +478,7 @@ router.get('/:year/:round/driver_standings', async (req, res) => {
 });
 
 
-router.get('/:year/:round/constructor_standings', async (req, res) => {
+router.get('/standings/:year/:round/constructors', async (req, res) => {
     const db = mongo.getDB();
     try {
         const pipeline = [

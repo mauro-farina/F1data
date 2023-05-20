@@ -33,12 +33,12 @@ export const RaceInfoQueryInterface = {
 
                 <div class="form-floating">
                     <select class="form-select bg-dark" id="floatingInfoType" v-model="raceInfo">
-                        <option value="">Overview</option>
-                        <!--<option value="race_grid">Race Grid</option>-->
-                        <option value="race_results">Race Results</option>
+                        <option value="races_">Overview</option>
+                        <!--<option value="races_grid">Race Grid</option>-->
+                        <option value="races_results">Race Results</option>
                         <option value="sprint_results">Sprint Results</option>
-                        <option value="driver_standings">Driver Standings</option>
-                        <option value="constructor_standings">Constructor Standings</option>
+                        <option value="standings_drivers">Driver Standings</option>
+                        <option value="standings_constructors">Constructor Standings</option>
                     </select>
                     <label for="floatingInfoType">Information</label>
                 </div>
@@ -145,7 +145,7 @@ export const RaceInfoQueryInterface = {
     `,
     watch: {
         raceYear: async function (newVal, oldVal) {
-            this.roundsOfYear = (await (await fetch(`/api/${newVal}/races`)).json()).map(r => r.round);
+            this.roundsOfYear = (await (await fetch(`/api/races/${newVal}`)).json()).map(r => r.round);
             if (this.raceRound !== '') {
                 this.sendRaceQuery();
             }
@@ -164,18 +164,19 @@ export const RaceInfoQueryInterface = {
     },
     methods : {
         sendRaceQuery: async function() {
-            let apiURL = `/api/${this.raceYear}/${this.raceRound}/${this.raceInfo}`;
+            const queryEntities = this.raceInfo.split('_');
+            let apiURL = `/api/${queryEntities[0]}/${this.raceYear}/${this.raceRound}/${queryEntities[1]}`;
             try {
                 let resultResponse = await fetch(apiURL);
                 if(resultResponse.status !== 200) throw new Error();
                 let resultJson = await resultResponse.json();
                 this.resetRaceArrays();
                 switch(this.raceInfo) {
-                    case '' : this.raceOverview = resultJson; break;
-                    case 'race_results' : this.raceResults = resultJson.results; break;
+                    case 'races_' : this.raceOverview = resultJson; break;
+                    case 'races_results' : this.raceResults = resultJson.results; break;
                     case 'sprint_results' : this.raceSprint = resultJson.results; break;
-                    case 'driver_standings' : this.raceDriverStandings = resultJson.driver_standings; break;
-                    case 'constructor_standings' : this.raceConstructorStandings = resultJson.constructor_standings; break;
+                    case 'standings_drivers' : this.raceDriverStandings = resultJson.driver_standings; break;
+                    case 'standings_constructors' : this.raceConstructorStandings = resultJson.constructor_standings; break;
                 }
             } catch(err) {
                 console.log(`${err}`);
