@@ -55,7 +55,7 @@ let extract_lap_times = async function() {
             
             for(let page_num in extracted_data.pages) {
             
-                const extracted_data_content = extracted_data.pages[page_num].content; // array
+                const extracted_data_content = extracted_data.pages[page_num].content;
                 let read_car_numb = false;
                 let read_leader = false;
                 
@@ -65,7 +65,6 @@ let extract_lap_times = async function() {
                     
                     if(line.str.match(/LAP\s\d+/g)) { // lap number
                         lap_data.lap++;
-                        lap_data.gap_to_leader = "0";
                         read_leader = true;
                     }
 
