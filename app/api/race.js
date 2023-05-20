@@ -217,7 +217,8 @@ router.get('/races/:year/:round/lap_times', async (req, res) => {
                     lap: "$lap",
                     driver_id: "$driver_id",
                     driver_name: { $arrayElemAt: ["$driver_info.driver_name", 0] },
-                    lap_time: "$lap_time"
+                    lap_time: "$lap_time",
+                    gap_to_leader: "$gap_to_leader"
                 }
             },
             {
@@ -227,14 +228,16 @@ router.get('/races/:year/:round/lap_times', async (req, res) => {
                         $push: {
                             driver_id: "$driver_id",
                             driver_name: "$driver_name",
-                            lap_time: "$lap_time"
+                            lap_time: "$lap_time",
+                            gap_to_leader: "$gap_to_leader"
                         }
                     }
                 }
             },
             {
                 $sort: {
-                    "_id.lap": 1
+                    "_id.lap": 1,
+                    "_id.gap_to_leader": 1
                 }
             },
             {
@@ -286,14 +289,15 @@ router.get('/races/:year/:round/lap_times/lap/:lap', async (req, res) => {
                 }
             },
             { 
-                $sort: { lap_time: 1 } 
+                $sort: { gap_to_leader: 1 } 
             },
             {
                 $project: {
                     _id: 0,
                     driver_id: "$driver_id",
                     driver_name: { $arrayElemAt: ["$driver.driver_name", 0] },
-                    lap_time: "$lap_time"
+                    lap_time: "$lap_time",
+                    gap_to_leader: "$gap_to_leader"
                 }
             }
         ];
@@ -304,7 +308,8 @@ router.get('/races/:year/:round/lap_times/lap/:lap', async (req, res) => {
             response.lap_times.push({
                 driver_id: data.driver_id,
                 driver_name: data.driver_name,
-                lap_time: data.lap_time
+                lap_time: data.lap_time,
+                gap_to_leader : data.gap_to_leader
             });
         }
         res.send(response);
@@ -348,7 +353,8 @@ router.get('/races/:year/:round/lap_times/driver/:driver', async (req, res) => {
                 $project: {
                     _id: 0,
                     lap: 1,
-                    lap_time: 1
+                    lap_time: 1,
+                    gap_to_leader: 1
                 }
             }
         ]).toArray();
