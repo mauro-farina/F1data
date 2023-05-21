@@ -48,7 +48,7 @@ export const ApiDocs = {
                             <td><code>GET</code></td>
                             <td><code>/api/drivers</code></td>
                             <td>Returns information about all drivers across all seasons in the Formula One
-                                championship.</td>
+                                championship. Year-filter is available, e.g. <code>?year=2022</code></td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
@@ -64,7 +64,7 @@ export const ApiDocs = {
                             <td><code>GET</code></td>
                             <td><code>/api/constructors</code></td>
                             <td>Returns information about all constructors across all seasons in the Formula One
-                                championship.</td>
+                                championship. Year-filter is available, e.g. <code>?year=2022</code></td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
@@ -79,8 +79,7 @@ export const ApiDocs = {
                         <tr>
                             <td><code>GET</code></td>
                             <td><code>/api/circuits</code></td>
-                            <td>Returns information about all circuits across all seasons in the Formula One
-                                championship.</td>
+                            <td>Returns information about all circuits that hosted Formula One races. Year-filter is available, e.g. <code>?year=2022</code></td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
@@ -92,9 +91,10 @@ export const ApiDocs = {
                         <tr>
                             <td><code>GET</code></td>
                             <td><code>/api/races</code></td>
-                            <td>Returns information about all races across all seasons in the Formula One championship.
+                            <td>Returns information about all races across all seasons in the Formula One championship. Year-filter is available, e.g. <code>?year=2022</code>
                             </td>
                         </tr>
+                    <!--
                         <tr>
                             <td><code>GET</code></td>
                             <td><code>/api/:year/drivers</code></td>
@@ -126,76 +126,83 @@ export const ApiDocs = {
                                 Formula One championship. Replace <code>year</code> with the year you want to query in
                                 four-digit format, e.g. <code>GET /api/2023/circuits</code>.</td>
                         </tr>
+                    -->
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round</code></td>
+                            <td><code>/api/races/:year</code></td>
+                            <td>Returns general information about all races in the <code>:year</code> F1 season.</td>
+                        </tr>
+                        <tr>
+                            <td><code>GET</code></td>
+                            <td><code>/api/races/:year/:round</code></td>
                             <td>Returns information about the race for the given <code>year</code> and
                                 <code>round</code>. Replace <code>year</code> with the year you want to query in
                                 four-digit format, and <code>round</code> with the round of the championship in which
-                                the race occurred, e.g. <code>GET /api/2023/5</code>.
+                                the race occurred, e.g. <code>GET /api/races/2023/5</code>.
                             </td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/race_results</code></td>
+                            <td><code>/api/races/:year/:round/results</code></td>
                             <td>Returns the results of the race for the given <code>year</code> and
                                 <code>round</code>. Replace <code>year</code> with the year you want to query in
                                 four-digit format, and <code>round</code> with the round of the championship in which
-                                the race occurred, e.g. <code>GET /api/2023/5/race_results</code>.
+                                the race occurred, e.g. <code>GET /api/races/2023/5/results</code>.
                             </td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/race_lap_times</code></td>
+                            <td><code>/api/races/:year/:round/lap_times</code></td>
                             <td>Returns the lap times of all drivers in the given race for the given <code>year</code>
                                 and <code>round</code>. Replace <code>year</code> with the year you want to query in
                                 four-digit format, and <code>round</code> with the round of the championship in which
-                                the race occurred, e.g. <code>GET /api/2023/5/race_lap_times</code>.</td>
+                                the race occurred, e.g. <code>GET /api/races/2023/5/lap_times</code>.</td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/race_lap_times/lap/:lap</code></td>
+                            <td><code>/api/races/:year/:round/lap_times/lap/:lap</code></td>
                             <td>Returns the lap times of all drivers on lap <code>lap</code> in the given race for the
                                 given <code>year</code> and <code>round</code>. Replace <code>year</code> with the
                                 year you want to query in four-digit format, <code>round</code> with the round of the
                                 championship in which the race occurred, and <code>lap</code> with the lap number you
-                                want to query, e.g. <code>GET /api/2023/5/race_lap_times/lap/3</code>.</td>
+                                want to query, e.g. <code>GET /api/races/2023/5/lap_times/lap/3</code>.</td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/race_lap_times/driver/:driver_id</code></td>
+                            <td><code>/api/races/:year/:round/lap_times/driver/:driver_id</code></td>
                             <td>Returns the lap times of the specified driver in the given race for the given
                                 <code>year</code> and <code>round</code>. Replace <code>year</code> with the year you
                                 want to query in four-digit format, <code>round</code> with the round of the
                                 championship in which the race occurred, and <code>driver_id</code> with the id of the
                                 driver you want to query, e.g.
-                                <code>GET /api/2023/5/race_lap_times/driver/lewis_hamilton</code>.
+                                <code>GET /api/races/2023/5/lap_times/driver/lewis_hamilton</code>.
                             </td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/sprint_results</code></td>
+                            <td><code>/api/sprint/:year/:round/results</code></td>
                             <td>Returns the results of the sprint race for the given <code>year</code> and
-                                <code>round</code>, e.g. <code>GET /api/2023/5/race_results</code>.
+                                <code>round</code>, e.g. <code>GET /api/sprint/2023/5/results</code>.
                             </td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/driver_standings</code></td>
+                            <td><code>/api/standings/:year/:round/drivers</code></td>
                             <td>Returns the driver standings after the given race (<code>round</code>) of a given 
-                            <code>year</code> (F1 season), e.g. <code>GET /api/2022/4/driver_standings</code>.</td>
+                            <code>year</code> (F1 season), e.g. <code>GET /api/standings/2022/4/drivers</code>.</td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
-                            <td><code>/api/:year/:round/constructor_standings</code></td>
+                            <td><code>/api/standings/:year/:round/constructors</code></td>
                             <td>Returns the constructor standings after the given race (<code>round</code>) of a given 
-                            <code>year</code> (F1 season), e.g. <code>GET /api/2022/4/constructor_standings</code>.
+                            <code>year</code> (F1 season), e.g. <code>GET /api/standings/2022/4/constructors</code>.
                             </td>
                         </tr>
                         <tr>
                             <td><code>GET</code></td>
                             <td><code>/api/dataset</code></td>
-                            <td>Returns information about the csv files that compose the dataset.
+                            <td>Returns information about the csv files that compose the dataset. 
+                            You can learn more about the dataset <a class="link-light" href='#/datasetDocs'>here</a>
                             </td>
                         </tr>
                         <tr>
