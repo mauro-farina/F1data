@@ -147,7 +147,7 @@ router.get('/races', async (req, res) => {
         const races = await db.collection('races').aggregate([
             { 
                 $match: {
-                    year: req.query['year'] === undefined ? { $exists: true } : parseInt(req.query['year'])
+                    year: (req.query['year'] === undefined || req.query['year'].length === 0) ? { $exists: true } : parseInt(req.query['year'])
                 }
             },
             {
