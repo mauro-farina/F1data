@@ -156,9 +156,7 @@ export const GeneralInfoQueryInterface = {
             }
         },
         generalInfo: function (newVal, oldVal) {
-            if(this.generalYear !== '') {
-                this.sendGeneralQuery();
-            }
+            this.sendGeneralQuery();
         }
     }
 }
