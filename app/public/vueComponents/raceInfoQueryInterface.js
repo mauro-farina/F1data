@@ -3,7 +3,7 @@ export const RaceInfoQueryInterface = {
         return {
             raceYear : "",
             raceRound : "" ,
-            raceInfo : "",
+            raceInfo : "races_",
             roundsOfYear : [],
             raceOverview : null,
             raceResults : [],
