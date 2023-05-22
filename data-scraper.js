@@ -23,6 +23,7 @@ let create_files = async function() {
     await write_to_csvfile("driver_standings", "year,round,position,driver_id,points");
     await write_to_csvfile("constructor_standings", "year,round,position,constructor_id,points");
     await write_to_csvfile("race_grid", "year,round,grid_position,driver_id,quali_time");
+    await write_to_csvfile("race_quali", "year,round,position,driver_id,q1,q2,q3\n");
 }
 
 let extract_lap_times = async function() {
@@ -570,12 +571,116 @@ const extract_grid = async function() {
     }
 }
 
+let extract_race_quali_results = async function () {
+    // year_round_race_quali.pdf
+    const pdfExtract = new PDFExtract();
+
+    const driver_regex = /^[A-Z][a-z]+ [A-Z]+ ?[A-Z]+?( \*)?$/g;
+    const chinese_driver_regex = /^[A-Z]+ [A-Z][a-z]+( \*)?$/g;
+    const lap_time_regex = /[0-9]+:[0-5][0-9].[0-9]{3}$/g;
+
+    let year = START_FROM_YEAR;
+    for (; year <= UP_TO_YEAR; year++) {
+        let csv = "";
+
+        for (let round = 1; round <= 22; round++) {
+            let round_str = round < 10 ? '0'.concat(round) : round;
+            let filename = DOCS_FOLDER + year + '_' + round_str + '_' + 'race_quali';
+
+            if (year === 2022 && round === 11) {
+                csv += "2022,11,1,max_verstappen,1:05.852,1:05.374,1:04.984\n"+
+                    "2022,11,2,charles_leclerc,1:05.419,1:05.287,1:05.013\n"+
+                    "2022,11,3,carlos_sainz,1:05.660,1:05.576,1:05.066\n"+
+                    "2022,11,4,george_russell,1:06.235,1:05.697,1:05.431\n"+
+                    "2022,11,5,esteban_ocon,1:06.468,1:05.993,1:05.726\n"+
+                    "2022,11,6,kevin_magnussen,1:06.366,1:05.894,1:05.879\n"+
+                    "2022,11,7,mick_schumacher,1:06.405,1:06.151,1:06.011\n"+
+                    "2022,11,8,fernando_alonso,1:06.016,1:06.082,1:06.103\n"+
+                    "2022,11,9,lewis_hamilton,1:06.079,1:05.475,1:13.151\n"+
+                    "2022,11,10,pierre_gasly,1:06.589,1:06.160,\n"+
+                    "2022,11,11,alexander_albon,1:06.516,1:06.230,\n"+
+                    "2022,11,12,valtteri_bottas,1:06.442,1:06.319,\n"+
+                    "2022,11,13,sergio_perez,1:06.143,1:06.458,\n"+
+                    "2022,11,14,yuki_tsunoda,1:06.463,1:06.851,\n"+
+                    "2022,11,15,lando_norris,1:06.330,1:25.847,\n"+
+                    "2022,11,16,daniel_ricciardo,1:06.613,,\n"+
+                    "2022,11,17,lance_stroll,1:06.847,,\n"+
+                    "2022,11,18,zhou_guanyu,1:06.901,,\n"+
+                    "2022,11,19,nicholas_latifi,1:07.003,,\n"+
+                    "2022,11,20,sebastian_vettel,1:07.083,,\n";
+                continue;
+            }
+
+            let extracted_data = {};
+            try {
+                extracted_data = await pdfExtract.extract(filename.concat('.pdf'), {});
+            } catch (error) {
+                break;
+            }
+
+            const extracted_data_content = extracted_data.pages[1].content;
+
+            let lap_data = {
+                driver_id: '',
+                position: 0,
+                q1: '',
+                q2: '',
+                q3: ''
+            };
+
+            for (let line of extracted_data_content) {
+                if (line.str.trim() === "")
+                    continue;
+                if (line.str.includes('POLE POSITION') || line.str.includes('NOT CLASSIFIED'))
+                    break;
+
+                if (line.str.match(driver_regex)
+                    || line.str.match(chinese_driver_regex)) {
+                    
+                    if (lap_data.driver_id !== '') {
+                        csv += `${year},${round},${lap_data.position},${lap_data.driver_id},${lap_data.q1},${lap_data.q2},${lap_data.q3}\n`;
+                    }
+
+                    lap_data.q1 = '';
+                    lap_data.q2 = '';
+                    lap_data.q3 = '';
+
+                    lap_data.driver_id = quali_driver_name_to_driver_id(line.str.replace(' *', '').replace('*', ''));
+                    lap_data.position++;
+                }
+
+                if (line.str.match(lap_time_regex)) {
+                    if (lap_data.q1 === '')  {
+                        lap_data.q1 = line.str.match(lap_time_regex);
+                        continue;
+                    }
+                    if (lap_data.q2 === '') {
+                        lap_data.q2 = line.str.match(lap_time_regex);
+                        continue;
+                    }
+                    if (lap_data.q3 === '') {
+                        lap_data.q3 = line.str.match(lap_time_regex);
+                        continue;
+                    }
+                }
+            }
+
+            csv += `${year},${round},${lap_data.position},${lap_data.driver_id},${lap_data.q1},${lap_data.q2},${lap_data.q3}\n`;
+
+            await write_to_csvfile("race_quali", csv);
+            csv = "";
+        }
+    }
+
+}
+
 create_files().then(() => {
     extract_lap_times();
     extract_standings(); 
     extract_race_results();
     extract_sprint_results();
     extract_grid();
+    extract_race_quali_results();
 });
 
 
@@ -722,5 +827,40 @@ const standing_constructor_to_constructor_id = function(constructor) {
         return 'haas';
     } else {
         return '';
+    }
+}
+
+
+const quali_driver_name_to_driver_id = function(driver) {
+    switch (driver) {
+        case 'Antonio GIOVINAZZI': return 'antonio_giovinazzi';
+        case 'Charles LECLERC': return 'charles_leclerc';
+        case 'Carlos SAINZ': return 'carlos_sainz';
+        case 'Daniel RICCIARDO': return 'daniel_ricciardo';
+        case 'Esteban OCON': return 'esteban_ocon';
+        case 'Fernando ALONSO': return 'fernando_alonso';
+        case 'George RUSSELL': return 'george_russell';
+        case 'Kimi RAIKKONEN': return 'kimi_raikkonen';
+        case 'Lewis HAMILTON': return 'lewis_hamilton';
+        case 'Lando NORRIS': return 'lando_norris';
+        case 'Lance STROLL': return 'lance_stroll';
+        case 'Mick SCHUMACHER': return 'mick_schumacher';
+        case 'Max VERSTAPPEN': return 'max_verstappen';
+        case 'Nicholas LATIFI': return 'nicholas_latifi';
+        case 'Nikita MAZEPIN': return 'nikita_mazepin';
+        case 'Pierre GASLY': return 'pierre_gasly';
+        case 'Sergio PEREZ': return 'sergio_perez';
+        case 'Sebastian VETTEL': return 'sebastian_vettel';
+        case 'Valtteri BOTTAS': return 'valtteri_bottas';
+        case 'Yuki TSUNODA': return 'yuki_tsunoda';
+        case 'Robert KUBICA': return 'robert_kubica';
+        case 'Alexander ALBON': return 'alexander_albon';
+        case 'Nyck DE VRIES': return 'nyck_de_vries';
+        case 'Nico HULKENBERG': return 'nico_hulkenberg';
+        case 'Kevin MAGNUSSEN': return 'kevin_magnussen';
+        case 'ZHOU Guanyu': return 'zhou_guanyu';
+        case 'Oscar PIASTRI': return 'oscar_piastri';
+        case 'Logan SARGEANT': return 'logan_sargeant'
+        default: return 'unknown';
     }
 }
