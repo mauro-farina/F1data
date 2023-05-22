@@ -17,6 +17,7 @@ export const ApiDocs = {
                 '/api/races/2021/14',
                 //'/api/races/2021/01/grid',
                 '/api/races/2021/14/results',
+                '/api/races/2021/14/quali',
                 '/api/races/2021/14/lap_times',
                 '/api/races/2021/14/lap_times/lap/50',
                 '/api/races/2021/14/lap_times/driver/daniel_ricciardo',
@@ -71,7 +72,7 @@ export const ApiDocs = {
                         should be replaced with the name of the constructor you are querying, which is given
                         by the formula <code>constructor_id = constructorName.toLowerCase().replace(' ','_')</code>
                     </p>
-                    <p>Example: <code>GET /api/constructors/ferrari<code></p>
+                    <p>Example: <code>GET /api/constructors/ferrari</code></p>
                 </div>
 
                 <div class="list-group-item">
@@ -126,6 +127,14 @@ export const ApiDocs = {
                         the race occurred.
                     </p>
                     <p>Example: <code>GET /api/races/2023/5/results</code></p>
+                </div>
+                <div class="list-group-item">
+                    <h4>GET <code>/api/races/[year]/[round]/quali</code></h4>
+                    <p>
+                        Returns the results of the race qualifying session for the given <code>year</code> and
+                        <code>round</code>.
+                    </p>
+                    <p>Example: <code>GET /api/races/2023/5/quali</code></p>
                 </div>
                 <div class="list-group-item">
                     <h4>GET <code>/api/races/[year]/[round]/lap_times</code></h4>
