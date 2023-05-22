@@ -222,7 +222,6 @@ router.get('/races/:year/:round/results', async (req, res) => {
             }
         ];
 
-
         const raceResults = await db.collection('race_results').aggregate(pipeline).toArray();
 
         const singleRaceInfo = {
@@ -232,6 +231,57 @@ router.get('/races/:year/:round/results', async (req, res) => {
         };
 
         res.send(singleRaceInfo);
+    } catch (err) {
+        console.error(`Something went wrong: ${err}`);
+        return res.status(500).json({ error: 'Server error' });
+    }
+});
+
+
+router.get('/races/:year/:round/quali', async (req, res) => {
+    const db = mongo.getDB();
+    try {
+        const pipeline = [
+            {
+                $match: {
+                    year: parseInt(req.params.year),
+                    round: parseInt(req.params.round)
+                }
+            },
+            {
+                $lookup: {
+                    from: 'drivers',
+                    localField: 'driver_id',
+                    foreignField: 'driver_id',
+                    as: 'driver'
+                }
+            },
+            { $unwind: '$driver' },
+            { 
+                $sort: { position: 1 } 
+            },
+            {
+                $project: {
+                    _id: 0,
+                    position: 1,
+                    driver_id: '$driver.driver_id',
+                    driver_name: '$driver.driver_name',
+                    q1: 1,
+                    q2: 1,
+                    q3: 1
+                }
+            }
+        ];
+
+        const qualiResults = await db.collection('race_quali').aggregate(pipeline).toArray();
+
+        const response = {
+            year: parseInt(req.params.year),
+            round: parseInt(req.params.round),
+            race_quali_results: qualiResults
+        };
+
+        res.send(response);
     } catch (err) {
         console.error(`Something went wrong: ${err}`);
         return res.status(500).json({ error: 'Server error' });
