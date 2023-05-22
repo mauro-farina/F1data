@@ -278,7 +278,7 @@ router.get('/races/:year/:round/quali', async (req, res) => {
         const response = {
             year: parseInt(req.params.year),
             round: parseInt(req.params.round),
-            race_quali_results: qualiResults
+            results: qualiResults
         };
 
         res.send(response);
