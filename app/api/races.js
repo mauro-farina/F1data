@@ -12,9 +12,54 @@ GET /api/races/:year/:round/lap_times                       // lap times of race
 GET /api/races/:year/:round/lap_times/lap/:lap              // lap times of race-lap
 GET /api/races/:year/:round/lap_times/driver/:driver        // lap times of driver
 GET /api/sprint/:year/:round/results                        // results of sprint race
-GET /api/standings/:year/:round/drivers                     // drivers standings after race
-GET /api/standings/:year/:round/constructors                // constructor standings after race
 */
+
+
+router.get('/races', async (req, res) => {
+    const db = mongo.getDB();
+    try {
+        const races = await db.collection('races').aggregate([
+            { 
+                $match: {
+                    year: (req.query['year'] === undefined || req.query['year'].length === 0) ? { $exists: true } : parseInt(req.query['year'])
+                }
+            },
+            {
+                $lookup: {
+                    from: 'circuits',
+                    localField: 'circuit_id',
+                    foreignField: 'circuit_id',
+                    as: 'circuit'
+                }
+            },
+            {
+                $unwind: '$circuit'
+            },
+            { 
+                $sort: { year: 1, round: 1 } 
+            },
+            {
+                $project: {
+                    _id: 0,
+                    year: 1,
+                    round: 1,
+                    gp_name: 1,
+                    race_date: 1,
+                    url: 1,
+                    country: '$circuit.country',
+                    city: '$circuit.city',
+                    circuit_id: 1,
+                    circuit_name: '$circuit.circuit_name'
+                }
+            }
+        ]).toArray();
+
+        res.send(races);
+    } catch (err) {
+        console.error(`Something went wrong: ${err}`);
+        return res.status(500).json({ error: 'Server error' });
+    }
+});
 
 router.get('/races/:year', async (req, res) => {
     const db = mongo.getDB();
@@ -432,102 +477,6 @@ router.get('/sprint/:year/:round/results', async (req, res) => {
     } catch (err) {
         console.error(`Something went wrong: ${err}`);
         return res.status(500).json({ error: 'Server error' });
-    }
-});
-
-
-router.get('/standings/:year/:round/drivers', async (req, res) => {
-    const db = mongo.getDB();
-    try {
-        const pipeline = [
-            {
-                $match: {
-                    year: parseInt(req.params.year),
-                    round: parseInt(req.params.round)
-                }
-            },
-            {
-                $lookup: {
-                    from: 'drivers',
-                    localField: 'driver_id',
-                    foreignField: 'driver_id',
-                    as: 'driver'
-                }
-            },
-            {
-                $unwind: '$driver'
-            },
-            { 
-                $sort: { position: 1 } 
-            },
-            {
-                $project: {
-                    _id: 0,
-                    position: 1,
-                    driver_name: '$driver.driver_name',
-                    driver_id: 1,
-                    points: 1
-                }
-            }
-        ];
-        let driverStandings = await db.collection("driver_standings").aggregate(pipeline).toArray();
-        let response = {
-            year: parseInt(req.params.year),
-            round: parseInt(req.params.round),
-            driver_standings: driverStandings
-        }
-        res.send(response);
-    } catch (err) {
-        console.error(`Something went wrong: ${err}`);
-        return res.status(500).json({ error: "Server error" });
-    }
-});
-
-
-router.get('/standings/:year/:round/constructors', async (req, res) => {
-    const db = mongo.getDB();
-    try {
-        const pipeline = [
-            {
-                $match: {
-                    year: parseInt(req.params.year),
-                    round: parseInt(req.params.round)
-                }
-            },
-            {
-                $lookup: {
-                    from: 'constructors',
-                    localField: 'constructor_id',
-                    foreignField: 'constructor_id',
-                    as: 'constructor'
-                }
-            },
-            {
-                $unwind: '$constructor'
-            },
-            { 
-                $sort: { position: 1 } 
-            },
-            {
-                $project: {
-                    _id: 0,
-                    position: 1,
-                    constructor_name: '$constructor.constructor_name',
-                    constructor_id: 1,
-                    points: 1
-                }
-            }
-        ];
-        let driverStandings = await db.collection("constructor_standings").aggregate(pipeline).toArray();
-        let response = {
-            year: parseInt(req.params.year),
-            round: parseInt(req.params.round),
-            constructor_standings: driverStandings
-        }
-        res.send(response);
-    } catch (err) {
-        console.error(`Something went wrong: ${err}`);
-        return res.status(500).json({ error: "Server error" });
     }
 });
 
