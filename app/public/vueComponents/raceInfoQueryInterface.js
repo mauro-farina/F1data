@@ -7,6 +7,7 @@ export const RaceInfoQueryInterface = {
             roundsOfYear : [],
             raceOverview : null,
             raceResults : [],
+            raceQuali : [],
             raceSprint : [],
             raceDriverStandings : [],
             raceConstructorStandings : []
@@ -36,6 +37,7 @@ export const RaceInfoQueryInterface = {
                         <option value="races_">Overview</option>
                         <!--<option value="races_grid">Race Grid</option>-->
                         <option value="races_results">Race Results</option>
+                        <option value="races_quali">Race Qualifications</option>
                         <option value="sprint_results">Sprint Results</option>
                         <option value="standings_drivers">Driver Standings</option>
                         <option value="standings_constructors">Constructor Standings</option>
@@ -107,6 +109,27 @@ export const RaceInfoQueryInterface = {
                 </tbody>
             </table>
 
+            <table class="table table-dark table-hover" v-if="raceQuali.length > 0">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Driver</th>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="rq of raceQuali">
+                        <td>{{rq.position}}</td>
+                        <td>{{rq.driver_name}}</td>
+                        <td>{{rq.q1}}</td>
+                        <td>{{rq.q2}}</td>
+                        <td>{{rq.q3}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <table class="table table-dark table-hover" v-if="raceDriverStandings.length > 0">
                 <thead>
                     <tr>
@@ -174,6 +197,7 @@ export const RaceInfoQueryInterface = {
                 switch(this.raceInfo) {
                     case 'races_' : this.raceOverview = resultJson; break;
                     case 'races_results' : this.raceResults = resultJson.results; break;
+                    case 'races_quali' : this.raceQuali = resultJson.results; break;
                     case 'sprint_results' : this.raceSprint = resultJson.results; break;
                     case 'standings_drivers' : this.raceDriverStandings = resultJson.driver_standings; break;
                     case 'standings_constructors' : this.raceConstructorStandings = resultJson.constructor_standings; break;
@@ -185,6 +209,7 @@ export const RaceInfoQueryInterface = {
         resetRaceArrays : function() {
             this.raceOverview = null;
             this.raceResults = [];
+            this.raceQuali = [];
             this.raceSprint = [];
             this.raceDriverStandings = [];
             this.raceConstructorStandings = [];
