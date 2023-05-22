@@ -206,6 +206,45 @@ export const DatasetDocs = {
                         <td>The finishing status of the driver in the sprint race</td>
                         <td>String</td>
                     </tr>
+                    
+                    <tr>
+                        <td colspan="3" class="fw-bold text-light ps-5 fs-5">race_quali.csv</td>
+                    </tr>
+                    <tr>
+                        <td>year</td>
+                        <td>The year of the race</td>
+                        <td>Int</td>
+                    </tr>
+                    <tr>
+                        <td>round</td>
+                        <td>The round of the race</td>
+                        <td>Int</td>
+                    </tr>
+                    <tr>
+                        <td>position</td>
+                        <td>The position of the driver at the end of the qualifying session</td>
+                        <td>Int</td>
+                    </tr>
+                    <tr>
+                        <td>driver_id</td>
+                        <td>The ID of the driver</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>q1</td>
+                        <td>The best time set by the driver during Q1</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>q2</td>
+                        <td>The best time set by the driver during Q2</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td>q3</td>
+                        <td>The best time set by the driver during Q3</td>
+                        <td>String</td>
+                    </tr>
                     <tr>
                         <td colspan="3" class="fw-bold text-light ps-5 fs-5">race_grid.csv</td>
                     </tr>
